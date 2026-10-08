@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pam Cassedy Dumangeng | Data Science Portfolio</title>
+<meta name="description" content="Data Science graduate (Latin Honors) from Mapua University. Machine learning, data analysis, and dashboards.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--alt:#fafafa;--fg:#09090b;--mu:#71717a;--bd:#e4e4e7;--chip:#f4f4f5;--r:14px}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:Inter,system-ui,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;font-size:16px}
+a{color:inherit}img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--bd)}
+.bar{max-width:1100px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:500;text-decoration:none;font-size:18px}
+nav{display:flex;gap:26px;font-size:14px}nav a{text-decoration:none;color:var(--fg)}nav a:hover{color:var(--mu)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--bd);background:#fff;border-radius:8px;padding:9px 16px;font:500 14px Inter,sans-serif;text-decoration:none;cursor:pointer;color:var(--fg)}
+.btn.dark{background:var(--fg);color:#fff;border-color:var(--fg)}.btn:hover{opacity:.85}
+section{padding:90px 24px}.alt{background:var(--alt)}
+.wrap{max-width:1100px;margin:auto}
+h2{font-size:34px;font-weight:500;text-align:center;letter-spacing:-.01em}
+.sub{color:var(--mu);text-align:center;max-width:640px;margin:12px auto 48px;font-size:17px}
+#home{min-height:calc(100vh - 62px);display:flex;align-items:center;text-align:center;background:linear-gradient(180deg,#fff,#fafafa)}
+#home h1{font-size:clamp(38px,7vw,68px);font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.tag{font-size:clamp(18px,3vw,26px);color:var(--mu);margin:14px 0 22px}
+.pitch{color:var(--mu);max-width:640px;margin:0 auto 30px}
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.icons{display:flex;gap:22px;justify-content:center;margin-top:34px}.icons a{padding:8px}
+.open{margin-top:26px;font-size:14px;color:var(--mu)}
+.card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:24px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card h3{font-size:17px;font-weight:600;margin-bottom:6px}.card p,.mu{color:var(--mu);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:var(--chip);border-radius:999px;padding:4px 13px;font-size:13px;font-weight:500}
+.chip.o{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:2px 10px;font-size:12px}
+.about{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center}
+.about .stack{display:grid;gap:16px}.photo{width:150px;height:150px;border-radius:50%;object-fit:cover;margin-bottom:22px;background:var(--chip)}
+.about p{color:var(--mu);margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center;margin-top:50px}.stats b{display:block;font-size:30px;font-weight:500}.stats span{color:var(--mu);font-size:14px}
+.skillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.proj{padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;width:100%}
+.proj:hover{border-color:#a1a1aa}
+.cover{aspect-ratio:16/9;background:var(--chip);display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:14px;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}.cover img.logo{object-fit:contain;padding:12%}
+.pb{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}.pb h3{font-size:17px;font-weight:600;line-height:1.35}
+.badge{align-self:flex-start;font-size:12px;font-weight:500;border:1px solid var(--bd);border-radius:999px;padding:2px 10px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#ececf0;border-radius:999px;padding:4px;margin-bottom:24px}
+.tabs button{border:0;background:transparent;padding:9px;border-radius:999px;font:500 14px Inter,sans-serif;cursor:pointer}.tabs button[aria-selected=true]{background:#fff}
+.panel{display:none;gap:20px}.panel.on{display:grid}
+.head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.head .mu{text-align:right}
+ul{padding-left:20px;color:var(--mu);font-size:15px;display:grid;gap:6px;margin-top:10px}
+.contact{display:grid;gap:30px;grid-template-columns:1fr 1.5fr}.contact .stack{display:grid;gap:16px;align-content:start}
+.contact a.card{text-decoration:none;display:block}
+form{display:grid;gap:16px}label{font-size:14px;font-weight:500;display:grid;gap:6px}
+input,textarea{font:inherit;border:0;background:var(--chip);border-radius:8px;padding:10px 13px;width:100%}
+.two{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+footer{text-align:center;color:var(--mu);font-size:14px;padding:30px 24px;border-top:1px solid var(--bd)}
+#detail{display:none;padding:50px 24px 90px}.detail .wrap{max-width:860px}
+.back{background:none;border:0;font:500 14px Inter,sans-serif;cursor:pointer;margin-bottom:26px;padding:0}
+#detail h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.2;letter-spacing:-.01em;margin:12px 0}
+#detail h3{font-size:18px;font-weight:600;margin:34px 0 8px}#detail p{color:var(--mu)}
+.shots{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:14px}.shots img{border:1px solid var(--bd);border-radius:10px;width:100%}
+body.d header ~ main,body.d section,body.d footer{display:none}body.d #detail{display:block}
+@media(max-width:760px){nav{display:none}.about,.contact,.two{grid-template-columns:1fr}section{padding:64px 20px}.head .mu{text-align:left}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="#home">Pam Cassedy Dumangeng</a>
+<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a></div></header>
+
+<section id="home"><div class="wrap">
+<h1>Hi, I'm Pam Cassedy Dumangeng</h1>
+<p class="tag">Learning, exploring, and finding meaning in data</p>
+<p class="pitch">I recently graduated with a degree in Data Science, where I worked on projects ranging from data analysis and visualization to machine learning. I'm now looking for a role where I can put those skills into practice, learn from real-world projects, and see where a career in data takes me.</p>
+<div class="row"><a class="btn dark" href="#projects">View my work</a><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download resume</a></div>
+<div class="icons">
+<a href="https://github.com/pcassedy" aria-label="GitHub" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+<a href="https://www.linkedin.com/in/pam-cassedy-dumangeng-65946b364" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></a>
+<a href="mailto:pamcassedyd@gmail.com" aria-label="Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a></div>
+<p class="open">Open to entry-level data analyst, junior data scientist, BI/Reporting Analyst, and Data Associate/Data Management roles</p>
+</div></section>
+
+<main>
+<section id="about" class="alt"><div class="wrap"><h2>About me</h2><p class="sub">Data Science graduate from Mapua University, with Latin Honors.</p>
+<div class="about"><div>
+<img class="photo" src="photo.jpg" alt="Pam Cassedy Dumangeng" onerror="this.style.display='none'">
+<p>You can call me Pam or Cassedy. I'm someone who tends to learn best when I can get my hands on something and work through it myself. This has shaped how I approach the projects and challenges I take on.</p>
+<p>I value work that gives me something to figure out, something to learn, and something I can look back on and understand better than I did before. That is the kind of mindset I hope to bring with me as I start my career.</p></div>
+<div class="stack">
+<div class="card"><h3>Education</h3><p>B.S. in Data Science, Mapua University (2023 to 2026), graduated with Latin Honors.</p></div>
+<div class="card"><h3>Recognition</h3><p>1st Place, Undergraduate Research Competition at the IEOM International Conference, Saudi Arabia (February 2026).</p></div>
+<div class="card"><h3>Experience</h3><p>Data Analytics Intern at Mapua's Office of Digital Education, Learning Technologies, and Analytics (DELTA), May to July 2026.</p></div></div></div></div></section>
+
+<section id="skills"><div class="wrap"><h2>Skills</h2><p class="sub">The tools I use across analysis, visualization, and machine learning.</p>
+<div class="grid" id="skillgrid"></div>
+<div class="stats"><div><b>3</b><span>Featured projects</span></div><div><b>1st Place</b><span>IEOM 2026 undergraduate research</span></div><div><b>7</b><span>Coursera certifications</span></div></div></div></section>
+
+<section id="projects" class="alt"><div class="wrap"><h2>Projects</h2><p class="sub">Select a project to see the problem, approach, findings, and links.</p>
+<div class="grid" id="projgrid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"></div></div></section>
+
+<section id="experience"><div class="wrap" style="max-width:860px"><h2>Experience &amp; education</h2><p class="sub">Internship, school, recognition, and certifications.</p>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="ex">Experience</button><button role="tab" aria-selected="false" data-t="ed">Education</button></div>
+<div class="panel on" id="ex">
+<div class="card"><div class="head"><div><h3>Data Analytics Intern</h3><p class="mu" style="color:var(--fg)">Mapua University, Office of Digital Education, Learning Technologies, and Analytics (DELTA)</p></div><div class="mu">May to July 2026<br>Intramuros and Makati City</div></div>
+<ul><li>Cleaned and analyzed survey data in Python through data preprocessing and exploratory data analysis.</li><li>Designed and built an interactive multi-page Power BI dashboard to visualize VR application evaluation results.</li></ul>
+<div class="chips"><span class="chip o">Python</span><span class="chip o">EDA</span><span class="chip o">Power BI</span></div></div>
+<div class="card"><div class="head"><div><h3>Member</h3><p class="mu" style="color:var(--fg)">Google Developer Student Club (GDSC), Mapua University</p></div><div class="mu">2024 to 2025</div></div></div></div>
+<div class="panel" id="ed">
+<div class="card"><div class="head"><div><h3>Bachelor of Science in Data Science</h3><p class="mu" style="color:var(--fg)">Mapua University, with Latin Honors</p></div><div class="mu">2023 to 2026</div></div>
+<p style="margin-top:12px">Coursework: Data Analytics, Machine Learning, Data Visualization, Exploratory Data Analysis, Business Intelligence.</p>
+<p style="margin-top:8px">Thesis: A Data Analysis Approach to Dengue Risk Assessment in CALABARZON Using Machine Learning.</p></div>
+<div class="card"><h3>Awards</h3><ul><li>1st Place, Undergraduate Research Competition, IEOM International Conference, Saudi Arabia (February 2026)</li><li>Latin Honors, Mapua University (September 2026)</li></ul></div>
+<div class="card"><h3>Certifications (Coursera)</h3><ul>
+<li>Microsoft Power Platform Developer Specialization, Whizlabs (May 2026)</li><li>Microsoft Generative AI for Data Analysis Specialization, Microsoft (April 2026)</li><li>Data Visualization with Tableau Specialization, University of California, Davis (March 2026)</li><li>Database Management Essentials, University of Colorado (June 2025)</li><li>Business Intelligence (BI) Essentials, IBM (February 2025)</li><li>Exploratory Data Analysis, University of Leeds (September 2024)</li><li>Python Packages for Data Science, University of Colorado Boulder (April 2024)</li></ul></div></div>
+</div></section>
+
+<section id="contact" class="alt"><div class="wrap" style="max-width:960px"><h2>Get in touch</h2><p class="sub">I'm open to entry-level data roles and happy to talk about my projects.</p>
+<div class="contact"><div class="stack">
+<a class="card" href="mailto:pamcassedyd@gmail.com"><h3>Email</h3><p>pamcassedyd@gmail.com</p></a>
+<a class="card" href="https://www.linkedin.com/in/pam-cassedy-dumangeng-65946b364" target="_blank" rel="noopener"><h3>LinkedIn</h3><p>Pam Cassedy Dumangeng</p></a>
+<a class="card" href="https://github.com/pcassedy" target="_blank" rel="noopener"><h3>GitHub</h3><p>github.com/pcassedy</p></a>
+<div class="card"><h3>Location</h3><p>Quezon City, Philippines</p></div></div>
+<div class="card"><h3 style="margin-bottom:18px">Send a message</h3>
+<form id="f"><div class="two"><label>Name<input name="n" required placeholder="Your full name"></label><label>Email<input type="email" name="e" required placeholder="you@example.com"></label></div>
+<label>Subject<input name="s" placeholder="What's this about?"></label>
+<label>Message<textarea name="m" rows="4" required placeholder="Tell me about the role or project"></textarea></label>
+<button class="btn dark" style="justify-content:center;padding:12px">Open in email app</button></form></div></div></div></section>
+</main>
+
+<article id="detail"><div class="wrap" id="dbody"></div></article>
+<footer>Pam Cassedy Dumangeng · Quezon City, Philippines</footer>
+
+<script>
+const skills={"Programming":["Python","SQL","R"],"Visualization":["Tableau","Power BI","Google Data Studio"],"Analysis and machine learning":["Data Cleaning","Exploratory Data Analysis","Feature Engineering","Statistical Analysis","Machine Learning"],"Tools & environment":["Jupyter Notebook","Google Colab","MySQL Workbench","VS Code"]};
+const P=[
+{id:1,tag:"Thesis",cover:"images/dengue-cover.jpg",
+title:"A Data Analysis Approach to Dengue Risk Assessment in CALABARZON Using Machine Learning",
+sum:"Built a machine learning framework that classifies municipality-level dengue risk in CALABARZON using climate, socioeconomic, and environmental data, reaching 82% accuracy with XGBoost.",
+by:"Co-authors: Gio Miguel Bihasa & Alexandra Santos",
+problem:"Dengue is a major public health concern in the Philippines, but risk assessment has mostly focused on climate alone, even though socioeconomic and environmental factors also affect transmission. This project asks whether combining all three types of data can classify dengue risk more effectively and help local governments decide where to focus prevention efforts.",
+data:["Municipality-level data from 2020 to 2024, merged from several sources using location and date as keys:","Dengue cases: Department of Health (DOH)","Climate: Open-Meteo web portal","Socioeconomic: PSA, DOH, Rural Health Units (RHU), DOH-licensed facilities, DTI municipality class","Environmental: NOAH, PSA, and the Geoportal Philippines web portal"],
+approach:["Gathered data from government agencies and publicly available portals, then cleaned it by handling missing values, removing duplicates, and standardizing formats.","Merged datasets by location, conducted exploratory data analysis using descriptive statistics, correlation analysis, ANOVA, and chi-square tests of independence, and performed feature engineering.","Defined the target variable by assigning each municipality a low, medium, or high dengue risk label based on dengue incidence thresholds using the mean and standard deviation, then split the data into 80% training and 20% testing sets.","Trained and compared four classification models (Logistic Regression, Support Vector Machine, Random Forest, and XGBoost) across different feature combinations, using randomized search and K-fold cross-validation for model tuning.","Evaluated the models using accuracy, precision, recall, F1 score, and confusion matrices, then selected the final model for municipality-level risk classification.","Used feature importance and SHAP analysis to interpret the model and identify the factors contributing to the classification results.","Conducted additional analyses on dengue incidence and climate variable lags, along with a separate data leakage demonstration, to explore temporal relationships and potential modeling issues.","Built an interactive Data Studio dashboard with choropleth maps, bar charts, and KPIs showing dengue risk across municipalities."],
+find:["XGBoost performed best overall across the feature combinations tested, with the final model achieving 82.06% accuracy, 80.91% precision, 82.06% recall, and an 81.05% F1-score.","The Socioeconomic + Environmental feature combination achieved the highest standalone accuracy at 82.30% (F1 = 81.57%). However, the full Climate + Socioeconomic + Environmental feature set was selected as the final model to provide a more comprehensive representation of dengue risk factors.","SHAP analysis identified temperature, relative humidity, and total population as the most influential individual features in the final model.","Environmental land-use variables, including forest cover and built-up/barren areas, also ranked highly, highlighting the role of environmental conditions and human exposure in dengue risk.","Overall, the results suggest that dengue risk is influenced by the interaction of climate, environmental, and socioeconomic factors rather than by climate variables alone."],
+tools:["Python","Machine Learning","Statistical Analysis","Feature Importance & SHAP","Google Data Studio"],
+links:[["Project page","https://pcassedy.github.io/dengue-risk-classification-thesis/"]],shots:[]},
+{id:2,tag:"1st Place, IEOM 2026",cover:"images/rawtoready-logo.png",logo:1,
+title:"RawtoReady: A Web-Based Automated Tool for Data Cleaning and Preparation",
+sum:"Co-developed a web-based tool that cleans datasets with one click, evaluated it with 56 users, and won 1st place in the Undergraduate Research Competition at IEOM 2026 in Saudi Arabia.",
+by:"Co-developers: Gio Miguel Bihasa, Kim Caryl Esperanza, & Louella Josephine Ng",
+problem:"Data cleaning is time-consuming and often requires technical skills or specialized software. This can make data preparation difficult for students, researchers, and professionals without programming experience. This project explores whether common, repetitive cleaning tasks can be packaged into a tool that makes data preparation more accessible.",
+data:["The tool was designed to work with user-uploaded datasets rather than a single fixed dataset. For evaluation, 56 participants assessed the tool's usability, effectiveness, and satisfaction using a questionnaire based on Edward de Bono's Six Thinking Hats method."],
+approach:["Designed a guided four-step workflow that allows users to upload their data, select cleaning options, run the process, and download the cleaned file with a summary of the changes made.","Developed one-click cleaning features for handling missing values, removing duplicates, standardizing text and dates, validating email addresses, fuzzy standardization, and detecting anomalies.","Evaluated the tool through a user survey with 56 participants, focusing on its usability, efficiency, and overall user experience.","Documented the study as a research paper, presented the work at an international conference, and published the study in the conference proceedings."],
+find:["Users found the tool efficient, accessible, and easy to use for preparing and cleaning data.","The tool reduced the time and effort required for manual data cleaning, while users reported greater confidence, organization, and control during the process.","Won 1st place in the Undergraduate Research Competition at the 3rd GCC International Conference on IEOM in Tabuk, Saudi Arabia (February 2026).","Published the research paper in the conference proceedings (DOI: 10.46254/GC03.20250536).","The study contributes to UN Sustainable Development Goals 4 (Quality Education) and 9 (Industry, Innovation, and Infrastructure)."],
+tools:["Python","Streamlit","SQLite","HTML"],
+links:[["Video demo","https://drive.google.com/file/d/1-o3EA1OZRPGqbD24pGHOJF66pMwagDic/view?usp=sharing"],["Live demo","https://rawtoready-sprint5.streamlit.app/"],["Code","https://github.com/pcassedy/RawtoReady"],["Paper","https://doi.org/10.46254/GC03.20250536"]],shots:[]},
+{id:3,tag:"Personal project",cover:"images/coffee-1-overview.png",
+title:"Where Coffee Flows: An End-to-End Analysis of Global Coffee Production and Trade",
+sum:"Built a Python and Power BI pipeline on 25 years of FAOSTAT coffee data, using KMeans clustering to group countries into five trade roles.",
+problem:"Coffee is grown in a few regions but traded almost everywhere, and production and trade data live in separate tables that are hard to compare. This project asks who grows coffee, who buys it, and what role each country plays in the global market.",
+data:["FAOSTAT green coffee production and trade data for 2000 to 2024. After merging, the dataset has 11,539 country-year records across 209 countries, where each row is one country in one year. Country-level profiles for 201 countries were used for clustering."],
+approach:["Cleaned and reshaped the raw production and trade data. Missing production values were kept as missing when they meant unreported rather than zero.","Explored each dataset separately, then merged them with an outer join so trade-only countries (re-exporters and hubs) were kept.","Engineered metrics such as export share of production, year-over-year growth, export value per tonne, and trade balance.","Aggregated these into one profile per country, applied power transformation and scaling, and used elbow and silhouette analysis to choose k=5 for KMeans.","Built a six-page interactive Power BI dashboard (Power Query and DAX) covering production, trade flows, and country clusters."],
+find:["Global production grew from about 4.5 million tonnes in 2000 to 11 million tonnes in 2024.","Coffee production in Asia grew 90% between 2000 and 2024, driven mainly by Vietnam.","Brazil alone produced 30% of the world's coffee in 2024, and South America accounted for 41.6%.","The US, Germany, and Italy are the largest importers by value. 200 countries import coffee but only 190 export it.","Clustering showed that most countries are peripheral to the coffee market, rather than core growers or major importers. Only a handful are mega importers."],
+tools:["Python","pandas","NumPy","scikit-learn","Matplotlib","Seaborn","Power BI (Power Query, DAX)"],
+links:[["Code and Power BI file","https://github.com/pcassedy/where-coffee-flows"]],
+shots:["coffee-0-title.jpg","coffee-1-overview.png","coffee-2-grows.png","coffee-3-goes.png","coffee-4-drivers.png","coffee-5-explore.png"].map(f=>"images/"+f)}];
+const $=s=>document.querySelector(s),ch=a=>a.map(t=>`<span class="chip">${t}</span>`).join("");
+$("#skillgrid").innerHTML=Object.entries(skills).map(([k,v])=>`<div class="card"><h3>${k}</h3><div class="skillrow">${ch(v)}</div></div>`).join("");
+$("#projgrid").innerHTML=P.map(p=>`<button class="card proj" data-id="${p.id}"><div class="cover"><img class="${p.logo?'logo':''}" src="${p.cover}" alt="" onerror="this.remove()"></div><div class="pb"><span class="badge">${p.tag}</span><h3>${p.title}</h3><p class="mu">${p.sum}</p><div class="chips" style="margin-top:auto">${p.tools.slice(0,4).map(t=>`<span class="chip o">${t}</span>`).join("")}</div></div></button>`).join("");
+const L=a=>"<ul>"+a.map(x=>`<li>${x}</li>`).join("")+"</ul>";
+function show(id){const p=P.find(x=>x.id==id);if(!p)return hide();document.body.classList.add("d");
+$("#dbody").innerHTML=`<button class="back" onclick="location.hash='projects'">← Back to projects</button><span class="badge">${p.tag}</span><h1>${p.title}</h1><p>${p.sum}</p>${p.by?`<p style="font-size:14px;margin-top:8px">${p.by}</p>`:""}
+<h3>Problem</h3><p>${p.problem}</p><h3>Data</h3>${p.data.length>1?`<p>${p.data[0]}</p>${L(p.data.slice(1))}`:`<p>${p.data[0]}</p>`}
+<h3>Approach</h3>${L(p.approach)}<h3>Findings</h3>${L(p.find)}<h3>Tools</h3><div class="chips">${ch(p.tools)}</div>
+<h3>Links</h3><div class="row" style="justify-content:flex-start">${p.links.map(([n,u])=>`<a class="btn" href="${u}" target="_blank" rel="noopener">${n}</a>`).join("")}</div>
+${p.shots.length?`<h3>Screenshots</h3><div class="shots">${p.shots.map(s=>`<img src="${s}" alt="${p.title} dashboard page" loading="lazy" onerror="this.remove()">`).join("")}</div>`:""}`;scrollTo(0,0);document.title=p.title+" | Pam Cassedy Dumangeng"}
+function hide(){document.body.classList.remove("d");document.title="Pam Cassedy Dumangeng | Data Science Portfolio"}
+function route(){const m=location.hash.match(/^#project-(\d+)/);m?show(m[1]):hide();if(!m&&location.hash){const e=document.getElementById(location.hash.slice(1));e&&setTimeout(()=>e.scrollIntoView(),0)}}
+document.addEventListener("click",e=>{const c=e.target.closest(".proj");if(c)location.hash="project-"+c.dataset.id});
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x==b));document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on",p.id==b.dataset.t))});
+$("#f").onsubmit=e=>{e.preventDefault();const f=e.target;location.href=`mailto:pamcassedyd@gmail.com?subject=${encodeURIComponent(f.s.value||"Portfolio message from "+f.n.value)}&body=${encodeURIComponent(f.m.value+"\n\n"+f.n.value+" ("+f.e.value+")")}`};
+addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
