@@ -132,6 +132,25 @@ body{background:var(--lt)}
 .tabs{background:#cfe3d5}.tabs button[aria-selected=true]{background:#f8fbf8}
 .btn{background:#f8fbf8}
 input,textarea{background:#e9f1eb}
+
+/* all-dark green theme: the hero gradient flows through the whole page */
+:root{--fg:#eef7f1;--mu:#a9c4b5;--bd:rgba(255,255,255,.13);--c:#86efac;--cs:rgba(134,239,172,.12);--cb:rgba(134,239,172,.35)}
+.k1,.k6{--c:#86efac;--cs:rgba(134,239,172,.12);--cb:rgba(134,239,172,.35)}.k2{--c:#6ee7b7;--cs:rgba(110,231,183,.12);--cb:rgba(110,231,183,.35)}.k3{--c:#bef264;--cs:rgba(190,242,100,.12);--cb:rgba(190,242,100,.35)}.k4{--c:#5eead4;--cs:rgba(94,234,212,.12);--cb:rgba(94,234,212,.35)}.k5{--c:#4ade80;--cs:rgba(74,222,128,.12);--cb:rgba(74,222,128,.35)}
+body{color:var(--fg);background:radial-gradient(50% 18% at 88% 28%,rgba(40,150,104,.22),transparent 70%),radial-gradient(45% 16% at 8% 62%,rgba(40,150,104,.18),transparent 70%),linear-gradient(180deg,#072a20 0%,#0b3d2e 35%,#0a3a2b 70%,#072a20 100%)}
+header{background:rgba(7,42,32,.92)}
+#about,#projects,#experience{background:transparent}#skills,#certifications,#contact{background:rgba(0,0,0,.16)}
+.sub,.about p,.stats span,section.dk .sub{color:var(--mu)}h2{color:#fff}
+.card{background:rgba(255,255,255,.055);border-color:var(--bd);box-shadow:none;color:var(--fg)}.card h3{color:#fff}.card[class*=" k"]{border-top-color:var(--c)}
+.chip.o{background:transparent;border-color:var(--cb);color:var(--c)}
+.badge.win{background:rgba(74,222,128,.15);color:#86efac;border-color:rgba(134,239,172,.4)}
+.btn{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}.btn.dark{background:#fff;color:#0b3d2e;border-color:#fff}.btn:hover{background:rgba(255,255,255,.12);opacity:1}.btn.dark:hover{background:#e3f6ea}
+.proj:hover{border-color:var(--c);box-shadow:0 10px 30px rgba(0,0,0,.4)}.pb h3{color:#fff}
+.tabs{background:rgba(255,255,255,.08)}.tabs button{color:#cfe5d8}.tabs button[aria-selected=true]{background:rgba(255,255,255,.16);color:#fff;box-shadow:none}
+input,textarea{background:rgba(255,255,255,.08);color:#fff}::placeholder{color:rgba(255,255,255,.45)}label{color:var(--fg)}
+.stats>div:nth-child(n) b{color:#86efac}
+#detail h1,#detail h3{color:#fff}#detail p{color:var(--mu)}.shots img{border-color:var(--bd)}#detail .btn{background:transparent}
+footer{background:#061f18}
+:focus-visible{outline-color:#a7f3d0}
 </style>
 </head>
 <body>
