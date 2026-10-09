@@ -62,18 +62,74 @@ footer{text-align:center;color:var(--mu);font-size:14px;padding:30px 24px;border
 .back{background:none;border:0;font:500 14px Inter,sans-serif;cursor:pointer;margin-bottom:26px;padding:0}
 #detail h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.2;letter-spacing:-.01em;margin:12px 0}
 #detail h3{font-size:18px;font-weight:600;margin:34px 0 8px}#detail p{color:var(--mu)}
-.shots{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:14px}.shots img{border:1px solid var(--bd);border-radius:10px;width:100%}
+.shots{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));margin-top:14px}.shots img{border:1px solid var(--bd);border-radius:10px;width:100%}
 body.d header ~ main,body.d section,body.d footer{display:none}body.d #detail{display:block}
 @media(max-width:760px){nav{display:none}.about,.contact,.two{grid-template-columns:1fr}section{padding:64px 20px}.head .mu{text-align:left}}
+
+:root{--c:#0f766e;--cs:#e6f4f1;--cb:#b7ddd6}
+.k1{--c:#0f766e;--cs:#e6f4f1;--cb:#a7d8d0}.k2{--c:#4338ca;--cs:#eef0ff;--cb:#c7cbf7}.k3{--c:#b45309;--cs:#fef3dc;--cb:#f3d49a}.k4{--c:#be123c;--cs:#ffe9ed;--cb:#f5b8c4}.k5{--c:#0369a1;--cs:#e3f3fd;--cb:#a9d6f0}
+.card[class*=" k"]{border-top:3px solid var(--c)}
+.chip{background:var(--cs);color:var(--c)}.chip.o{background:#fff;color:var(--c);border-color:var(--cb)}.badge{background:var(--cs);color:var(--c);border-color:var(--cb)}
+.proj:hover{border-color:var(--c);box-shadow:0 8px 24px rgba(15,23,42,.10)}
+.cover{position:relative;background:linear-gradient(135deg,var(--cs),#fff)}.cover::before{content:attr(data-l);position:absolute;color:var(--c);font-weight:600;font-size:15px}.cover img{position:relative;z-index:1}.cover img.logo{background:#fff}
+.card h3{color:var(--fg)}.skillrow .chip{font-weight:500}
+#home{background:radial-gradient(45% 50% at 12% 8%,#cdeee8 0,transparent 70%),radial-gradient(40% 45% at 90% 5%,#dfe2ff 0,transparent 70%),radial-gradient(40% 40% at 85% 95%,#fde8c8 0,transparent 70%),linear-gradient(180deg,#fff,#f8faf9)}
+.g{background:linear-gradient(90deg,#0f766e,#4338ca 60%,#be123c);-webkit-background-clip:text;background-clip:text;color:transparent}
+#about{background:#f6f7ff}#projects{background:#fbf8f2}#contact{background:#f3faf8}
+.stats>div:nth-child(1) b{color:#4338ca}.stats>div:nth-child(2) b{color:#b45309}.stats>div:nth-child(3) b{color:#0369a1}
+#detail h3{border-left:3px solid var(--c);padding-left:10px}#detail .btn{border-color:var(--cb);color:var(--c)}#detail .btn:hover{background:var(--cs)}
+.back{color:var(--c)}.contact a.card:hover{border-color:var(--c)}
+.k6{--c:#15803d;--cs:#dcfce7;--cb:#86efac}.card.win{background:var(--cs);border-color:var(--cb)}.card.win p{color:#166534}.badge.win{background:#dcfce7;color:#166534;border-color:#86efac}
+#certifications{background:#f6f8f7}
+
+/* green theme */
+:root{--bg:#e4f3e8;--alt:#d3ebd9;--bd:#bcdcc6;--ac:#166534;--acd:#14532d;--acs:#e0f3e5;--c:#166534;--cs:#e0f3e5;--cb:#9fd0ae;--mu:#475f52}
+body{background:var(--bg)}
+header{background:rgba(228,243,232,.92);border-bottom-color:var(--bd)}
+#home{background:radial-gradient(50% 55% at 12% 5%,#f4fbf6 0,transparent 70%),radial-gradient(45% 50% at 92% 8%,#cfe9d6 0,transparent 70%),linear-gradient(180deg,#e4f3e8,#d3ebd9)}
+#about{background:#d9eede}#skills{background:#e4f3e8}#projects{background:#d3ebd9}#experience{background:#e4f3e8}#certifications{background:#d9eede}#contact{background:#d3ebd9}
+footer{background:#cbe6d3;border-top-color:var(--bd)}
+.btn{background:#fff;border-color:#a9d4b6}.btn.dark{background:var(--ac);border-color:var(--ac)}
+.card{border-color:var(--bd)}.card[class*=" k"]{border-color:var(--bd)}
+.tabs{background:#c9e5d1}.tabs button[aria-selected=true]{background:#fff}
+.sub,.about p,.open,.stats span{color:#41584b}
+
+/* dark green + white theme */
+:root{--bg:#fff;--alt:#f2faf5;--fg:#0f1f18;--bd:#d6e8dc;--mu:#52645a;--ac:#14532d;--acd:#14532d;--c:#166534;--dg:#0b3d2e;--dg2:#072a20}
+body{background:#fff;color:var(--fg)}
+header{background:var(--dg);border-bottom:1px solid rgba(255,255,255,.10)}
+header .brand{color:#fff}header nav a{color:#d3eadb}header nav a:hover{color:#fff}
+header .btn{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}header .btn:hover{background:rgba(255,255,255,.12);opacity:1}
+#home{background:radial-gradient(55% 60% at 50% 0%,#1f6b4d 0,transparent 72%),radial-gradient(40% 45% at 92% 100%,#134e3a 0,transparent 70%),linear-gradient(180deg,var(--dg),var(--dg2))}
+#home h1{color:#fff}.g{background:linear-gradient(90deg,#a7f3d0,#fff 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#home .tag{color:#bfe3cf}#home .pitch{color:#d2e8db}#home .open{color:#9fc4af}
+#home .btn.dark{background:#fff;color:var(--dg);border-color:#fff}#home .btn:not(.dark){background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+#home .btn:not(.dark):hover{background:rgba(255,255,255,.12);opacity:1}
+.icons a,.icons a:hover{color:#a7f3d0}
+#about{background:#fff}#skills{background:var(--alt)}#projects{background:var(--dg)}#experience{background:#fff}#certifications{background:var(--alt)}#contact{background:var(--dg)}
+section.dk h2{color:#fff}section.dk .sub{color:#b9d9c7}
+.sub,.about p,.stats span{color:#4a5f54}
+.btn{background:#fff;border-color:#bcd9c6}.btn.dark{background:var(--dg);color:#fff;border-color:var(--dg)}
+.card{border-color:var(--bd);box-shadow:0 1px 2px rgba(11,61,46,.05)}.card[class*=" k"]{border-color:var(--bd)}
+.proj:hover{box-shadow:0 10px 30px rgba(0,0,0,.35)}
+section.dk .card:not(.proj){box-shadow:none}
+.tabs{background:#e3f1e8}
+footer{background:var(--dg2);color:#9fc4af;border-top:0}
+header :focus-visible,#home :focus-visible,.dk :focus-visible{outline-color:#a7f3d0}
+
+.card[class*=" k"]{border-top-color:var(--c)}
+.stats>div b{color:var(--c)}
+.head>div:first-child{flex:1 1 340px;min-width:0}.head .mu{flex:0 0 auto}
+body.d #home{display:none}.back{display:block}
 </style>
 </head>
 <body>
 <header><div class="bar"><a class="brand" href="#home">Pam Cassedy Dumangeng</a>
-<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav>
 <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a></div></header>
 
 <section id="home"><div class="wrap">
-<h1>Hi, I'm Pam Cassedy Dumangeng</h1>
+<h1>Hi, I'm <span class="g">Pam Cassedy Dumangeng</span></h1>
 <p class="tag">Learning, exploring, and finding meaning in data</p>
 <p class="pitch">I recently graduated with a degree in Data Science, where I worked on projects ranging from data analysis and visualization to machine learning. I'm now looking for a role where I can put those skills into practice, learn from real-world projects, and see where a career in data takes me.</p>
 <div class="row"><a class="btn dark" href="#projects">View my work</a><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download resume</a></div>
@@ -91,34 +147,36 @@ body.d header ~ main,body.d section,body.d footer{display:none}body.d #detail{di
 <p>You can call me Pam or Cassedy. I'm someone who tends to learn best when I can get my hands on something and work through it myself. This has shaped how I approach the projects and challenges I take on.</p>
 <p>I value work that gives me something to figure out, something to learn, and something I can look back on and understand better than I did before. That is the kind of mindset I hope to bring with me as I start my career.</p></div>
 <div class="stack">
-<div class="card"><h3>Education</h3><p>B.S. in Data Science, Mapua University (2023 to 2026), graduated with Latin Honors.</p></div>
-<div class="card"><h3>Recognition</h3><p>1st Place, Undergraduate Research Competition at the IEOM International Conference, Saudi Arabia (February 2026).</p></div>
-<div class="card"><h3>Experience</h3><p>Data Analytics Intern at Mapua's Office of Digital Education, Learning Technologies, and Analytics (DELTA), May to July 2026.</p></div></div></div></div></section>
+<div class="card k2"><h3>Education</h3><p>B.S. in Data Science, Mapua University (2023 to 2026), graduated with Latin Honors.</p></div>
+<div class="card k3"><h3>Recognition</h3><p>1st Place, Undergraduate Research Competition at the IEOM International Conference, Saudi Arabia (February 2026).</p></div>
+<div class="card k1"><h3>Experience</h3><p>Data Analytics Intern at Mapua's Office of Digital Education, Learning Technologies, and Analytics (DELTA), May to July 2026.</p></div></div></div></div></section>
 
 <section id="skills"><div class="wrap"><h2>Skills</h2><p class="sub">The tools I use across analysis, visualization, and machine learning.</p>
 <div class="grid" id="skillgrid"></div>
-<div class="stats"><div><b>4</b><span>Featured projects</span></div><div><b>1st Place</b><span>IEOM 2026 undergraduate research</span></div><div><b>7</b><span>Coursera certifications</span></div></div></div></section>
+<div class="stats"><div><b>4</b><span>Featured projects</span></div><div><b>3</b><span>Programming languages: Python, SQL, R</span></div><div><b>7</b><span>Coursera certifications</span></div></div></div></section>
 
-<section id="projects" class="alt"><div class="wrap"><h2>Projects</h2><p class="sub">Select a project to see the problem, approach, findings, and links.</p>
-<div class="grid" id="projgrid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"></div></div></section>
+<section id="projects" class="dk"><div class="wrap"><h2>Projects</h2><p class="sub">Select a project to see the problem, approach, findings, and links.</p>
+<div class="grid" id="projgrid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))"></div></div></section>
 
 <section id="experience"><div class="wrap" style="max-width:860px"><h2>Experience &amp; education</h2><p class="sub">Internship, school, recognition, and certifications.</p>
 <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="ex">Experience</button><button role="tab" aria-selected="false" data-t="ed">Education</button></div>
 <div class="panel on" id="ex">
-<div class="card"><div class="head"><div><h3>Data Analytics Intern</h3><p class="mu" style="color:var(--fg)">Mapua University, Office of Digital Education, Learning Technologies, and Analytics (DELTA)</p></div><div class="mu">May to July 2026<br>Intramuros and Makati City</div></div>
+<div class="card k1"><div class="head"><div><h3>Data Analytics Intern</h3><p class="mu" style="color:var(--fg)">Mapua University, Office of Digital Education, Learning Technologies, and Analytics (DELTA)</p></div><div class="mu">May to July 2026<br>Intramuros and Makati City</div></div>
 <ul><li>Cleaned and analyzed survey data in Python through data preprocessing and exploratory data analysis.</li><li>Designed and built an interactive multi-page Power BI dashboard to visualize VR application evaluation results.</li></ul>
 <div class="chips"><span class="chip o">Python</span><span class="chip o">EDA</span><span class="chip o">Power BI</span></div></div>
-<div class="card"><div class="head"><div><h3>Member</h3><p class="mu" style="color:var(--fg)">Google Developer Student Club (GDSC), Mapua University</p></div><div class="mu">2024 to 2025</div></div></div></div>
+<div class="card k2"><div class="head"><div><h3>Member</h3><p class="mu" style="color:var(--fg)">Google Developer Student Club (GDSC), Mapua University</p></div><div class="mu">2024 to 2025</div></div></div></div>
 <div class="panel" id="ed">
-<div class="card"><div class="head"><div><h3>Bachelor of Science in Data Science</h3><p class="mu" style="color:var(--fg)">Mapua University, with Latin Honors</p></div><div class="mu">2023 to 2026</div></div>
+<div class="card k2"><div class="head"><div><h3>Bachelor of Science in Data Science</h3><p class="mu" style="color:var(--fg)">Mapua University, with Latin Honors</p></div><div class="mu">2023 to 2026</div></div>
 <p style="margin-top:12px">Coursework: Data Analytics, Machine Learning, Data Visualization, Exploratory Data Analysis, Business Intelligence.</p>
 <p style="margin-top:8px">Thesis: A Data Analysis Approach to Dengue Risk Assessment in CALABARZON Using Machine Learning.</p></div>
-<div class="card"><h3>Awards</h3><ul><li>1st Place, Undergraduate Research Competition, IEOM International Conference, Saudi Arabia (February 2026)</li><li>Latin Honors, Mapua University (September 2026)</li></ul></div>
-<div class="card"><h3>Certifications (Coursera)</h3><ul>
-<li>Microsoft Power Platform Developer Specialization, Whizlabs (May 2026)</li><li>Microsoft Generative AI for Data Analysis Specialization, Microsoft (April 2026)</li><li>Data Visualization with Tableau Specialization, University of California, Davis (March 2026)</li><li>Database Management Essentials, University of Colorado (June 2025)</li><li>Business Intelligence (BI) Essentials, IBM (February 2025)</li><li>Exploratory Data Analysis, University of Leeds (September 2024)</li><li>Python Packages for Data Science, University of Colorado Boulder (April 2024)</li></ul></div></div>
+<div class="card k3"><h3>Awards</h3><ul><li>1st Place, Undergraduate Research Competition, IEOM International Conference, Saudi Arabia (February 2026)</li><li>Latin Honors, Mapua University (September 2026)</li></ul></div>
+</div>
 </div></section>
 
-<section id="contact" class="alt"><div class="wrap" style="max-width:960px"><h2>Get in touch</h2><p class="sub">I'm open to entry-level data roles and happy to talk about my projects.</p>
+<section id="certifications"><div class="wrap"><h2>Certifications</h2><p class="sub">Specializations and courses I completed on Coursera.</p>
+<div class="grid" id="certgrid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))"></div></div></section>
+
+<section id="contact" class="dk"><div class="wrap" style="max-width:960px"><h2>Get in touch</h2><p class="sub">I'm open to entry-level data roles and happy to talk about my projects.</p>
 <div class="contact"><div class="stack">
 <a class="card" href="mailto:pamcassedyd@gmail.com"><h3>Email</h3><p>pamcassedyd@gmail.com</p></a>
 <a class="card" href="https://www.linkedin.com/in/pam-cassedy-dumangeng-65946b364" target="_blank" rel="noopener"><h3>LinkedIn</h3><p>Pam Cassedy Dumangeng</p></a>
@@ -137,7 +195,7 @@ body.d header ~ main,body.d section,body.d footer{display:none}body.d #detail{di
 <script>
 const skills={"Programming":["Python","SQL","R"],"Visualization":["Tableau","Power BI","Google Data Studio"],"Analysis and machine learning":["Data Cleaning","Exploratory Data Analysis","Feature Engineering","Statistical Analysis","Machine Learning"],"Tools & environment":["Jupyter Notebook","Google Colab","MySQL Workbench","VS Code"]};
 const P=[
-{id:1,tag:"Thesis",cover:"images/dengue-cover.jpg",fit:1,
+{id:1,k:4,tag:"Thesis",cover:"https://raw.githubusercontent.com/pcassedy/dengue-risk-classification-thesis/main/results/classification/yearly-maps/calabarzon_2024_map.png",fit:1,
 title:"A Data Analysis Approach to Dengue Risk Assessment in CALABARZON Using Machine Learning",
 sum:"Built a machine learning framework that classifies municipality-level dengue risk in CALABARZON using climate, socioeconomic, and environmental data, reaching 82% accuracy with XGBoost.",
 by:"Co-authors: Gio Miguel Bihasa & Alexandra Santos",
@@ -147,9 +205,9 @@ approach:["Gathered data from government agencies and publicly available portals
 find:["XGBoost performed best overall across the feature combinations tested, with the final model achieving 82.06% accuracy, 80.91% precision, 82.06% recall, and an 81.05% F1-score.","The Socioeconomic + Environmental feature combination achieved the highest standalone accuracy at 82.30% (F1 = 81.57%). However, the full Climate + Socioeconomic + Environmental feature set was selected as the final model to provide a more comprehensive representation of dengue risk factors.","SHAP analysis identified temperature, relative humidity, and total population as the most influential individual features in the final model.","Environmental land-use variables, including forest cover and built-up/barren areas, also ranked highly, highlighting the role of environmental conditions and human exposure in dengue risk.","Overall, the results suggest that dengue risk is influenced by the interaction of climate, environmental, and socioeconomic factors rather than by climate variables alone."],
 tools:["Python","Machine Learning","Statistical Analysis","Feature Importance & SHAP","Google Data Studio"],
 links:[["Project page","https://pcassedy.github.io/dengue-risk-classification-thesis/"]],shots:[]},
-{id:2,tag:"1st Place, IEOM 2026",cover:"images/rawtoready-logo.png",logo:1,
+{id:2,k:2,win:1,tag:"1st Place, IEOM 2026",cover:"images/rawtoready-logo.png",logo:1,
 title:"RawtoReady: A Web-Based Automated Tool for Data Cleaning and Preparation",
-sum:"Co-developed a web-based tool that cleans datasets with one click, evaluated it with 56 users, and won 1st place in the Undergraduate Research Competition at IEOM 2026 in Saudi Arabia.",
+sum:"Co-developed a web-based tool that cleans datasets with one click, then evaluated it with 56 users.",
 by:"Co-developers: Gio Miguel Bihasa, Kim Caryl Esperanza, & Louella Josephine Ng",
 problem:"Data cleaning is time-consuming and often requires technical skills or specialized software. This can make data preparation difficult for students, researchers, and professionals without programming experience. This project explores whether common, repetitive cleaning tasks can be packaged into a tool that makes data preparation more accessible.",
 data:["The tool was designed to work with user-uploaded datasets rather than a single fixed dataset. For evaluation, 56 participants assessed the tool's usability, effectiveness, and satisfaction using a questionnaire based on Edward de Bono's Six Thinking Hats method."],
@@ -157,7 +215,7 @@ approach:["Designed a guided four-step workflow that allows users to upload thei
 find:["Users found the tool efficient, accessible, and easy to use for preparing and cleaning data.","The tool reduced the time and effort required for manual data cleaning, while users reported greater confidence, organization, and control during the process.","Won 1st place in the Undergraduate Research Competition at the 3rd GCC International Conference on IEOM in Tabuk, Saudi Arabia (February 2026).","Published the research paper in the conference proceedings (DOI: 10.46254/GC03.20250536).","The study contributes to UN Sustainable Development Goals 4 (Quality Education) and 9 (Industry, Innovation, and Infrastructure)."],
 tools:["Python","Streamlit","SQLite","HTML"],
 links:[["Video demo","https://drive.google.com/file/d/1-o3EA1OZRPGqbD24pGHOJF66pMwagDic/view?usp=sharing"],["Live demo","https://rawtoready-sprint5.streamlit.app/"],["Code","https://github.com/pcassedy/RawtoReady"],["Paper","https://doi.org/10.46254/GC03.20250536"]],shots:[]},
-{id:3,tag:"Personal project",cover:"images/coffee-1-overview.png",
+{id:3,k:3,tag:"Personal project",cover:"images/coffee-1-overview.png",
 title:"Where Coffee Flows: An End-to-End Analysis of Global Coffee Production and Trade",
 sum:"Built a Python and Power BI pipeline on 25 years of FAOSTAT coffee data, using KMeans clustering to group countries into five trade roles.",
 problem:"Coffee is grown in a few regions but traded almost everywhere, and production and trade data live in separate tables that are hard to compare. This project asks who grows coffee, who buys it, and what role each country plays in the global market.",
@@ -167,23 +225,25 @@ find:["Global production grew from about 4.5 million tonnes in 2000 to 11 millio
 tools:["Python","pandas","NumPy","scikit-learn","Matplotlib","Seaborn","Power BI (Power Query, DAX)"],
 links:[["Code and Power BI file","https://github.com/pcassedy/where-coffee-flows"]],
 shots:["coffee-0-title.jpg","coffee-1-overview.png","coffee-2-grows.png","coffee-3-goes.png","coffee-4-drivers.png","coffee-5-explore.png"].map(f=>"images/"+f)},
-{id:4,tag:"Tableau dashboard",cover:"images/covid-1-overview.png",
+{id:4,k:5,tag:"Tableau dashboard",cover:"https://raw.githubusercontent.com/pcassedy/covid19-pandemic-dashboard/main/screenshots/00-summary.png",
 title:"COVID-19 Pandemic Dashboard",
-sum:"Built an interactive four-view Tableau dashboard on global COVID-19 cases, deaths, vaccinations, and hospitalizations, using over 429,000 records across 255 locations.",
+sum:"Built a five-page interactive Tableau dashboard on global COVID-19 cases, deaths, vaccinations, and hospitalizations, using over 429,000 records across 255 locations.",
 problem:"COVID-19 data is spread across dozens of measures and hundreds of locations, which makes it hard to see how cases, deaths, vaccination, and hospital capacity relate. This project brings them together in one interactive dashboard that anyone can explore by metric, region, and country.",
 data:["Our World in Data COVID-19 dataset: 429,435 rows and 67 columns, with one row per location per day, from January 2020 to August 2024. It covers 255 locations, including countries and aggregates such as continents and the world."],
-show:["Overview: global map, cases and deaths over time, headline totals, and the top five contributing countries.","Population impact: a custom impact score by country, countries with the most deaths, and how age structure and comorbidities relate to outcomes.","Vaccines: vaccination coverage on a map, comparing fully, partially, and not vaccinated populations.","Hospitalizations: hospital and ICU patients over time against bed capacity, plus peak ICU load."],
-approach:["Loaded the dataset into Tableau and built an extract so the workbook runs without extra downloads.","Created about 50 calculated fields, including fixed level-of-detail expressions that pull each country's latest value for cases, deaths, and vaccinations.","Added 6 parameters so viewers can switch between total and new counts, choose a continent, change the vaccination metric, and pick a comorbidity or age group.","Designed a composite impact score that combines new cases and new deaths per million people, weighting deaths 10 times as heavily as cases.","Assembled 27 worksheets into four dashboards, with titles, labels, and KPI cards that update to match each selection."],
-find:[],
+show:["Summary: an introduction to the pandemic and the headline numbers, with a guide to what each page contains.","Overview: global map, cases and deaths over time, headline totals, and the top five contributing countries.","Population impact: a custom impact score by country, countries with the most deaths, and how age structure and comorbidities relate to outcomes.","Vaccines: vaccination coverage on a map, comparing fully, partially, and not vaccinated populations.","Hospitalizations: hospital and ICU patients over time against bed capacity, plus peak ICU load."],
+approach:["Loaded the dataset into Tableau and built an extract so the workbook runs without extra downloads.","Created about 50 calculated fields, including fixed level-of-detail expressions that pull each country's latest value for cases, deaths, and vaccinations.","Added 6 parameters so viewers can switch between total and new counts, choose a continent, change the vaccination metric, and pick a comorbidity or age group.","Designed a composite impact score that combines new cases and new deaths per million people, weighting deaths 10 times as heavily as cases.","Assembled 27 worksheets into a summary page and four dashboards, with titles, labels, and KPI cards that update to match each selection."],
+find:["Over 775 million people contracted COVID-19 worldwide during the pandemic, with more than 7 million deaths reported.","Around 5 billion people were fully vaccinated against COVID-19, according to the dashboard's summary page."],
 tools:["Tableau Public","Calculated fields","LOD expressions","Parameters","Dashboard design"],
 links:[["Live dashboard","https://public.tableau.com/app/profile/pam.cassedy/viz/FinalProjectDataViz_17763998736500/Story1"]],
-shots:["covid-1-overview.png","covid-2-population-impact.png","covid-3-vaccines.png","covid-4-hospitalizations.png"].map(f=>"images/"+f)}];
+shots:["00-summary.png","01-overview.png","02-populationimpact.png","03-hospitalizations.png","04-vaccines.png"].map(f=>"https://raw.githubusercontent.com/pcassedy/covid19-pandemic-dashboard/main/screenshots/"+f)}];
 const $=s=>document.querySelector(s),ch=a=>a.map(t=>`<span class="chip">${t}</span>`).join("");
-$("#skillgrid").innerHTML=Object.entries(skills).map(([k,v])=>`<div class="card"><h3>${k}</h3><div class="skillrow">${ch(v)}</div></div>`).join("");
-$("#projgrid").innerHTML=P.map(p=>`<button class="card proj" data-id="${p.id}"><div class="cover"><img class="${p.logo?'logo':p.fit?'fit':''}" src="${p.cover}" alt="" onerror="this.remove()"></div><div class="pb"><span class="badge">${p.tag}</span><h3>${p.title}</h3><p class="mu">${p.sum}</p><div class="chips" style="margin-top:auto">${p.tools.slice(0,4).map(t=>`<span class="chip o">${t}</span>`).join("")}</div></div></button>`).join("");
+$("#skillgrid").innerHTML=Object.entries(skills).map(([k,v],i)=>`<div class="card k${[2,3,1,4][i]}"><h3>${k}</h3><div class="skillrow">${ch(v)}</div></div>`).join("");
+$("#projgrid").innerHTML=P.map(p=>`<button class="card proj k${p.k}" data-id="${p.id}"><div class="cover" data-l="${p.tag}"><img class="${p.logo?'logo':p.fit?'fit':''}" src="${p.cover}" alt="" onerror="this.remove()"></div><div class="pb"><span class="badge${p.win?' win':''}">${p.tag}</span><h3>${p.title}</h3><p class="mu">${p.sum}</p><div class="chips" style="margin-top:auto">${p.tools.slice(0,4).map(t=>`<span class="chip o">${t}</span>`).join("")}</div></div></button>`).join("");
+const certs=[["Microsoft Power Platform Developer Specialization","Whizlabs","May 2026"],["Microsoft Generative AI for Data Analysis Specialization","Microsoft","April 2026"],["Data Visualization with Tableau Specialization","University of California, Davis","March 2026"],["Database Management Essentials","University of Colorado","June 2025"],["Business Intelligence (BI) Essentials","IBM","February 2025"],["Exploratory Data Analysis","University of Leeds","September 2024"],["Python Packages for Data Science","University of Colorado Boulder","April 2024"]];
+$("#certgrid").innerHTML=certs.map((c,i)=>`<div class="card k${[5,2,3,1,4][i%5]}"><span class="badge">Coursera · ${c[2]}</span><h3 style="margin-top:12px">${c[0]}</h3><p>${c[1]}</p></div>`).join("");
 const L=a=>"<ul>"+a.map(x=>`<li>${x}</li>`).join("")+"</ul>";
 function show(id){const p=P.find(x=>x.id==id);if(!p)return hide();document.body.classList.add("d");
-$("#dbody").innerHTML=`<button class="back" onclick="location.hash='projects'">← Back to projects</button><span class="badge">${p.tag}</span><h1>${p.title}</h1><p>${p.sum}</p>${p.by?`<p style="font-size:14px;margin-top:8px">${p.by}</p>`:""}
+$("#dbody").className="wrap k"+p.k;$("#dbody").innerHTML=`<button class="back" onclick="location.hash='projects'">← Back to projects</button><span class="badge${p.win?' win':''}">${p.tag}</span><h1>${p.title}</h1><p>${p.sum}</p>${p.by?`<p style="font-size:14px;margin-top:8px">${p.by}</p>`:""}
 <h3>Problem</h3><p>${p.problem}</p><h3>Data</h3>${p.data.length>1?`<p>${p.data[0]}</p>${L(p.data.slice(1))}`:`<p>${p.data[0]}</p>`}
 ${p.show?`<h3>What it shows</h3>${L(p.show)}`:""}<h3>Approach</h3>${L(p.approach)}${p.find.length?`<h3>Findings</h3>${L(p.find)}`:""}<h3>Tools</h3><div class="chips">${ch(p.tools)}</div>
 <h3>Links</h3><div class="row" style="justify-content:flex-start">${p.links.map(([n,u])=>`<a class="btn" href="${u}" target="_blank" rel="noopener">${n}</a>`).join("")}</div>
