@@ -299,13 +299,13 @@ document.getElementById("toolgroups").innerHTML=tools.map(([g,items])=>
 /* ---------- CERTIFICATIONS ---------- */
 /* Add each Coursera share link as the fourth item, for example "https://coursera.org/verify/...". The button appears once a link is added. */
 const certs=[
-  ["Microsoft Power Platform Developer Specialization","Whizlabs","May 2026",""],
-  ["Microsoft Generative AI for Data Analysis Specialization","Microsoft","April 2026",""],
-  ["Data Visualization with Tableau Specialization","University of California, Davis","March 2026",""],
-  ["Database Management Essentials","University of Colorado","June 2025",""],
-  ["Business Intelligence (BI) Essentials","IBM","February 2025",""],
-  ["Exploratory Data Analysis","University of Leeds","September 2024",""],
-  ["Python Packages for Data Science","University of Colorado Boulder","April 2024",""]
+  ["Microsoft Power Platform Developer Specialization","Whizlabs","May 2026","https://www.coursera.org/account/accomplishments/specialization/SW1932C27N84"],
+  ["Microsoft Generative AI for Data Analysis Specialization","Microsoft","April 2026","https://www.coursera.org/account/accomplishments/professional-cert/904CN5OKOKBP"],
+  ["Data Visualization with Tableau Specialization","University of California, Davis","March 2026","https://www.coursera.org/account/accomplishments/specialization/2RHSU3LZWPN9"],
+  ["Database Management Essentials","University of Colorado","June 2025","https://www.coursera.org/account/accomplishments/verify/9BVDCEWKZSCU"],
+  ["Business Intelligence (BI) Essentials","IBM","February 2025","https://www.coursera.org/account/accomplishments/verify/KDXL4FE26JCY"],
+  ["Exploratory Data Analysis","University of Leeds","September 2024","https://www.coursera.org/account/accomplishments/verify/EZ3CV82ZV3NJ"],
+  ["Python Packages for Data Science","University of Colorado Boulder","April 2024","https://www.coursera.org/account/accomplishments/verify/BYBWHL56ZKTD"]
 ];
 document.getElementById("certs").innerHTML=certs.map(([t,o,d,l])=>
   `<div class="cert"><div><p class="t">${t}</p><p class="s">${o} · ${d}</p></div>${l?`<a href="${l}" target="_blank" rel="noopener">View Certificate</a>`:""}</div>`).join("");
@@ -314,6 +314,30 @@ document.getElementById("certs").innerHTML=certs.map(([t,o,d,l])=>
 const GH="https://github.com/pcassedy/";
 const RAW="https://raw.githubusercontent.com/pcassedy/";
 const P=[
+{
+ id:"rawtoready", title:"RawtoReady", subtitle:"A Web-Based Automated Tool for Data Cleaning and Preparation",
+ team:"Co-developed with Gio Miguel Bihasa, Kim Caryl Esperanza and Louella Josephine Ng.",
+ role:"My work focused on the frontend of the tool, including the interface, design, layout, theme and loading time, as well as parts of the results display. I also added the numeric anomaly detection feature.",
+ award:"1st Place, Undergraduate Research Competition, 3rd GCC International Conference on IEOM, Tabuk, Saudi Arabia (February 2026)",
+ cover:null, logo:"https://raw.githubusercontent.com/pcassedy/RawtoReady/main/logo.png", chips:["Python","Streamlit","SQLite"],
+ card:"This web-based tool, developed as a team project, automates data cleaning and preparation in a single step.",
+ highlight:"The tool was evaluated for usability with 56 users.",
+ links:[["Try the Live Demo","https://rawtoready-wbpamjppcmrojtgwq69vil.streamlit.app/",1],["Watch the Video Demo","https://drive.google.com/file/d/1-o3EA1OZRPGqbD24pGHOJF66pMwagDic/view?usp=sharing"],["Read the Paper","https://doi.org/10.46254/GC03.20250536"],["View Project Files",GH+"RawtoReady"]],
+ overview:"Data cleaning is time-consuming and often requires technical skills or specialized software, which can make data preparation difficult for students, researchers and professionals without programming experience. This project explores whether common, repetitive cleaning tasks can be packaged into a tool that makes data preparation more accessible.",
+ dataset:{text:"The tool works with any dataset a user uploads rather than a single fixed dataset. For evaluation, 56 participants assessed its usability, effectiveness and satisfaction through a questionnaire based on Edward de Bono's Six Thinking Hats method."},
+ tools:[["Python (pandas, NumPy, regex, difflib)","Cleaning logic"],["Streamlit","Web interface"],["SQLite","User accounts and cleaning history"],["SHA-256 hashing","Password security"]],
+ questions:[],
+ sections:[
+  {step:"clean",title:"Features",blocks:[
+   {p:"The tool offers one-click options to fill or drop missing values, remove duplicate rows, standardize column names, normalize text, fix date formats, validate email addresses, standardize similar text values and detect numeric anomalies using a z-score method. Each run produces a summary report with statistics before and after cleaning, and the cleaned file can be downloaded as a CSV."}
+  ]},
+  {step:null,title:"Evaluation and Results",blocks:[
+   {h:"Approach",list:["A guided four-step workflow lets users upload their data, select cleaning options, run the process and download the cleaned file with a summary of the changes.","The tool was evaluated through a survey of 56 participants, focusing on usability, efficiency and overall user experience.","The study was documented as a research paper, presented at an international conference and published in the conference proceedings (DOI 10.46254/GC03.20250536)."]},
+   {h:"Results",list:["Users found the tool efficient, accessible and easy to use for preparing and cleaning data.","The tool reduced the time and effort required for manual data cleaning, while users reported greater confidence, organization and control during the process.","The study won 1st place in the Undergraduate Research Competition at the 3rd GCC International Conference on IEOM.","The study contributes to UN Sustainable Development Goals 4 (Quality Education) and 9 (Industry, Innovation and Infrastructure)."]}
+  ]}
+ ],
+ limits:[]
+},
 {
  id:"superstore", title:"Inside the Superstore", subtitle:"An Analysis of Sales and Profitability",
  cover:"images/superstore-dashboard.png", chips:["MySQL","Tableau"],
@@ -385,7 +409,7 @@ const P=[
  overview:"Coffee is grown in a few regions but traded almost everywhere, and production and trade data live in separate tables that are hard to compare. This project examines who grows coffee, who buys it, and what role each country plays in the global market.",
  dataset:{text:"The project uses FAOSTAT green coffee production and trade data for 2000 to 2024. After merging, the dataset has 11,539 country-year records across 209 countries, where each row is one country in one year. Country-level profiles for 201 countries were used for clustering."},
  tools:[["Python (Jupyter Notebook)","Cleaning, exploration, metrics and clustering"],["pandas, NumPy","Data preparation and calculations"],["Matplotlib, Seaborn","Exploratory charts"],["scikit-learn","KMeans clustering, scaling and PCA"],["Power BI (Power Query, DAX)","Building the interactive dashboard"]],
- questions:["Who grows the world's coffee?","Who buys it?","What role does each country play in the global coffee market?"],
+ questions:["Who grows the most coffee?","How is coffee production spread across the world?","Which continents dominate global coffee trade?","Which countries lead in import and export value?","How many countries fall into each trade type, and does each group export more than it imports?"],
  sections:[
   {step:"clean",blocks:[
    {h:"Data Quality Assessment",p:"Raw FAOSTAT production and trade data were loaded and inspected for structure, missing values and quality flags. Production data were reshaped from long to wide format, with production, harvested area and yield stored as separate columns."},
@@ -398,8 +422,9 @@ const P=[
    {list:["South America accounted for 41.6% of global production in 2024.","The United States, Germany and Italy are the largest importers by value.","200 countries import coffee, while 190 export it.","Most countries are peripheral to the coffee market rather than core growers or major importers, and only four are mega importers."]},
    {decision:"Five clusters were selected after elbow and silhouette analysis, as this number gave better analytical separation between country roles."}
   ]},
-  {step:null,title:"Dashboard",blocks:[
-   {p:"The Power BI report has a title page and five pages covering an overview, where coffee grows, where coffee goes, who drives the trade, and a filterable data table.",images:[["images/coffee-1-overview.png","Overview page"],["images/coffee-2-grows.png","Where Coffee Grows page"],["images/coffee-3-goes.png","Where Coffee Goes page"],["images/coffee-4-drivers.png","Who Drives the Trade page"],["images/coffee-5-explore.png","Explore the Data page"]]}
+  {step:"recommend",blocks:[
+   {h:"Recommendations",recs:[["Diversified coffee sourcing beyond South America","Coffee buyers and importers should broaden their supplier base to include producers in Asia, such as Vietnam and Indonesia. A wider mix of sourcing regions reduces the risk that a poor harvest or disruption in a single country affects the entire supply. This approach also positions buyers to benefit from Asia's continued growth as a coffee-producing region."],["Higher yields in producing countries","Producing countries should prioritize programs that increase the amount of coffee harvested per hectare, such as improved farming practices, better plant varieties and technical support for farmers. Higher yields would allow supply to keep pace with growing trade demand without the need to expand farmland. This strategy would be especially valuable for smaller producers seeking a larger share of the global market."],["Price and country-to-country trade data in future analysis","Future versions of this analysis should include coffee price data and records of which countries trade with each other. These additions would make it possible to trace the actual flow of coffee between markets and to measure how prices change over time. The resulting insights would provide a stronger basis for decisions on sourcing, export strategy and market entry."]]},
+   {h:"Dashboard",p:"The Power BI report has a title page and five pages covering an overview, where coffee grows, where coffee goes, who drives the trade, and a filterable data table.",images:[["images/coffee-1-overview.png","Overview page"],["images/coffee-2-grows.png","Where Coffee Grows page"],["images/coffee-3-goes.png","Where Coffee Goes page"],["images/coffee-4-drivers.png","Who Drives the Trade page"],["images/coffee-5-explore.png","Explore the Data page"]]}
   ]}
  ],
  limits:[]
@@ -439,30 +464,6 @@ const P=[
   ]}
  ],
  limits:[]
-},
-{
- id:"rawtoready", title:"RawtoReady", subtitle:"A Web-Based Automated Tool for Data Cleaning and Preparation",
- team:"Co-developed with Gio Miguel Bihasa, Kim Caryl Esperanza and Louella Josephine Ng.",
- role:"My work focused on the frontend of the tool, including the interface, design, layout, theme and loading time, as well as parts of the results display. I also added the numeric anomaly detection feature.",
- award:"1st Place, Undergraduate Research Competition, 3rd GCC International Conference on IEOM, Tabuk, Saudi Arabia (February 2026)",
- cover:null, chips:["Python","Streamlit","SQLite"],
- card:"This web-based tool, developed as a team project, automates data cleaning and preparation in a single step.",
- highlight:"The tool was evaluated for usability with 56 users.",
- links:[["Try the Live Demo","https://rawtoready-wbpamjppcmrojtgwq69vil.streamlit.app/",1],["Watch the Video Demo","https://drive.google.com/file/d/1-o3EA1OZRPGqbD24pGHOJF66pMwagDic/view?usp=sharing"],["Read the Paper","https://doi.org/10.46254/GC03.20250536"],["View Project Files",GH+"RawtoReady"]],
- overview:"Data cleaning is time-consuming and often requires technical skills or specialized software, which can make data preparation difficult for students, researchers and professionals without programming experience. This project explores whether common, repetitive cleaning tasks can be packaged into a tool that makes data preparation more accessible.",
- dataset:{text:"The tool works with any dataset a user uploads rather than a single fixed dataset. For evaluation, 56 participants assessed its usability, effectiveness and satisfaction through a questionnaire based on Edward de Bono's Six Thinking Hats method."},
- tools:[["Python (pandas, NumPy, regex, difflib)","Cleaning logic"],["Streamlit","Web interface"],["SQLite","User accounts and cleaning history"],["SHA-256 hashing","Password security"]],
- questions:[],
- sections:[
-  {step:"clean",title:"Features",blocks:[
-   {p:"The tool offers one-click options to fill or drop missing values, remove duplicate rows, standardize column names, normalize text, fix date formats, validate email addresses, standardize similar text values and detect numeric anomalies using a z-score method. Each run produces a summary report with statistics before and after cleaning, and the cleaned file can be downloaded as a CSV."}
-  ]},
-  {step:null,title:"Evaluation and Results",blocks:[
-   {h:"Approach",list:["A guided four-step workflow lets users upload their data, select cleaning options, run the process and download the cleaned file with a summary of the changes.","The tool was evaluated through a survey of 56 participants, focusing on usability, efficiency and overall user experience.","The study was documented as a research paper, presented at an international conference and published in the conference proceedings (DOI 10.46254/GC03.20250536)."]},
-   {h:"Results",list:["Users found the tool efficient, accessible and easy to use for preparing and cleaning data.","The tool reduced the time and effort required for manual data cleaning, while users reported greater confidence, organization and control during the process.","The study won 1st place in the Undergraduate Research Competition at the 3rd GCC International Conference on IEOM.","The study contributes to UN Sustainable Development Goals 4 (Quality Education) and 9 (Industry, Innovation and Infrastructure)."]}
-  ]}
- ],
- limits:[]
 }
 ];
 
@@ -471,7 +472,7 @@ const esc=s=>s;
 
 document.getElementById("cards").innerHTML=P.map(p=>`
 <a class="card" href="#project/${p.id}">
-${p.cover?`<img class="cover${p.fit?" fit":""}" src="${p.cover}" alt="${p.title} preview" loading="lazy">`:`<div class="rtr" aria-hidden="true"><span>Raw</span><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg><span>Ready</span></div>`}
+${p.cover?`<img class="cover${p.fit?" fit":""}" src="${p.cover}" alt="${p.title} preview" loading="lazy">`:`<div class="rtr" style="background:#fff"><img src="${p.logo}" alt="${p.title} logo" style="width:72%;max-width:300px"></div>`}
 <div class="body">
 <div class="chips">${p.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
 <h3>${p.title}</h3>
@@ -555,4 +556,3 @@ route();
 </script>
 </body>
 </html>
-
