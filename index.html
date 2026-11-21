@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pam Cassedy Dumangeng | Data Analysis Portfolio</title>
+<meta name="description" content="Data analysis projects by Pam Cassedy Dumangeng, each documenting how the data was prepared, analyzed and turned into recommendations.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#1F4D3A;--g-line:#3A6B57;--mint:#9FD9B8;--on-g:#D6E3DB;--on-g2:#C3D3CA;
+  --ink:#13241C;--mu:#4D5A52;--mu2:#44504A;--body:#2A3630;--bd:#D9E4DC;--chip:#E3EEE7;
+  --clean:#1F5FBF;--clean-t:#E6EEFA;--analyze:#A6530A;--analyze-t:#FBEEDF;--rec:#17734C;--rec-t:#E2F2E9;
+  --head:'Space Grotesk',sans-serif
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:#fff;color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.6}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--clean);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.narrow{max-width:1000px;margin:0 auto;padding:0 32px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:999px;padding:13px 24px;border:1.5px solid var(--g);color:var(--g);background:#fff}
+.btn.solid{background:var(--g);color:#fff}
+.btn.sm{font-size:15px;padding:10px 20px}
+.btn:hover{opacity:.88}
+
+/* header */
+header.top{position:sticky;top:0;z-index:10;background:var(--g);border-bottom:1px solid var(--g-line)}
+header.top nav{max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.brand{font-family:var(--head);font-weight:700;font-size:18px;color:#fff;text-decoration:none}
+.links{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:15px;font-weight:500}
+.links a{color:#E6EFE9;text-decoration:none}.links a:hover{color:var(--mint)}
+
+/* sections */
+.sec{padding:88px 0}
+.sec h2{margin:0;font-size:44px}
+.lead{margin:8px 0 40px;color:var(--mu);max-width:640px}
+.green{background:var(--g);color:#fff}
+
+/* hero */
+.hero{background:var(--g);color:#fff;padding:112px 0}
+.hero h1{margin:0;font-size:clamp(40px,7vw,68px);line-height:1.05;letter-spacing:-.02em;max-width:860px}
+.hero h1 span{color:var(--mint)}
+.hero p{margin:28px 0 0;font-size:19px;color:var(--on-g);max-width:620px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero .btn{background:#fff;color:var(--g);border-color:#fff}
+.hero .btn.ghost{background:transparent;color:#fff}
+
+/* how i work */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
+.step{display:flex;flex-direction:column;gap:16px}
+.step .mark{display:flex;align-items:center;gap:12px}
+.step .num{flex:none;width:44px;height:44px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:700}
+.step .line{flex-grow:1;height:2px;background:var(--bd)}
+.step h3{margin:0;font-size:26px}
+.step p{margin:0;color:var(--mu2)}
+
+/* project cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.card{text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--bd);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(19,36,28,.08)}
+.card .cover{height:200px;width:100%;object-fit:cover;object-position:top;border-bottom:1px solid var(--bd);background:#fff}
+.card .cover.fit{object-fit:contain;padding:8px}
+.card .rtr{height:200px;background:var(--clean-t);border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:center;gap:14px;color:var(--clean);font-family:var(--head);font-weight:700;font-size:26px}
+.card .body{padding:24px;display:flex;flex-direction:column;gap:12px;flex-grow:1}
+.card h3{margin:0;font-size:22px}
+.card p{margin:0;font-size:15px;color:var(--mu2)}
+.card p.hl{color:var(--ink);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--chip);color:var(--g)}
+
+/* about */
+.about{display:flex;flex-wrap:wrap;gap:56px}
+.about>div{flex:1 1 380px}
+.about h2{margin:0 0 20px}
+.about p{font-size:17px;color:var(--on-g);margin:0 0 16px}
+.facts{flex:1 1 480px}
+.fact{display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid var(--g-line)}
+.fact:last-child{border-bottom:none}
+.fact .k{width:120px;font-size:13px;font-weight:600;color:var(--on-g2);text-transform:uppercase;letter-spacing:.06em}
+.fact .v{flex:1 1 260px}
+.fact .v p{margin:0;font-size:16px}
+.fact .v .t{font-weight:600;color:#fff}
+
+/* tools */
+.tgroup{margin-bottom:36px}
+.tgroup h3{margin:0 0 16px;font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:var(--mu);text-transform:uppercase;letter-spacing:.06em}
+.tiles{display:flex;flex-wrap:wrap;gap:16px}
+.tile{width:132px;border:1px solid var(--bd);border-radius:16px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.tile img,.tile svg{width:44px;height:44px}
+.tile span{font-weight:600;font-size:15px;line-height:1.3}
+
+/* certifications */
+.cert{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:18px 0;border-top:1px solid var(--g-line)}
+.cert:last-child{border-bottom:1px solid var(--g-line)}
+.cert p{margin:0}.cert .t{font-weight:600}.cert .s{font-size:14px;color:var(--on-g2);margin-top:2px}
+.cert a{font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid #fff;color:#fff;padding:8px 16px;border-radius:999px}
+
+/* contact & footer */
+.contact{text-align:center}
+.contact p{margin:16px auto 32px;color:var(--mu);max-width:560px;font-size:17px}
+.contact .row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+footer{background:var(--g);color:#E6EFE9;text-align:center;padding:24px 32px;font-size:14px}
+
+/* project detail */
+#detail{display:none}
+body.detail #home{display:none}
+body.detail #detail{display:block}
+.pd-top{padding:56px 0 40px}
+.back{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;color:var(--g);margin-bottom:32px}
+.pd-top h1{margin:0;font-size:clamp(34px,5vw,52px);line-height:1.1;letter-spacing:-.02em}
+.pd-top .subt{margin:12px 0 0;font-size:20px;color:var(--mu2)}
+.pd-top .team{margin:12px 0 0;font-size:15px;color:var(--mu)}
+.award{display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--g);background:var(--chip);padding:8px 14px;border-radius:10px}
+.role{margin-top:20px;border-left:4px solid var(--g);background:#F2F6F3;border-radius:0 12px 12px 0;padding:14px 18px;max-width:760px}
+.role .k{margin:0 0 4px;font-size:13px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.06em}
+.role p{margin:0;font-size:15px;color:var(--body)}
+.pd-top .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.box{border:1px solid var(--bd);border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:32px}
+.box h2{margin:0 0 12px;font-size:26px}
+h3.sub{margin:0 0 12px;font-size:20px}
+.pd p{margin:0 0 16px;color:var(--body)}
+.pd ul,.pd ol{margin:0 0 16px;padding-left:22px;color:var(--body);display:flex;flex-direction:column;gap:8px}
+.tbl{overflow-x:auto;border:1px solid var(--bd);border-radius:12px;margin-bottom:16px}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.tbl th{text-align:left;padding:12px 18px;font-weight:600;background:#F2F6F3}
+.tbl td{padding:12px 18px;border-top:1px solid var(--bd);vertical-align:top}
+.stepnav{display:flex;flex-wrap:wrap;gap:10px;margin:48px 0 8px}
+.stepnav a{text-decoration:none;padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px}
+.psec{padding:40px 0 16px}
+.psec .bar{border-top:4px solid var(--g);padding-top:28px}
+.psec .lab{margin:0;font-size:14px;font-weight:700;letter-spacing:.06em}
+.psec h2{margin:4px 0 28px;font-size:36px}
+.blk{margin-bottom:28px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:20px}
+.stat{border:1px solid var(--bd);border-radius:12px;padding:22px}
+.stat b{display:block;font-family:var(--head);font-size:32px;line-height:1.2}
+.stat span{display:block;margin-top:6px;font-size:15px}
+.decision{border:1px solid var(--bd);border-radius:12px;padding:20px 22px;background:#fff}
+.decision .k{margin:0 0 6px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.decision p{margin:0;font-size:15px}
+.recs{display:flex;flex-direction:column;gap:14px;margin-bottom:16px}
+.rec{display:flex;gap:18px;border:1px solid var(--bd);border-radius:12px;padding:22px}
+.rec .n{flex:none;width:36px;height:36px;border-radius:10px;background:var(--rec-t);color:var(--rec);display:flex;align-items:center;justify-content:center;font-weight:700}
+.rec .t{margin:0;font-weight:600;font-size:17px;color:var(--ink)}
+.rec .d{margin:4px 0 0;font-size:15px;color:var(--mu2)}
+.gallery{display:flex;flex-direction:column;gap:16px}
+.gallery img{width:100%;border-radius:12px;border:1px solid var(--bd)}
+.limits{padding:24px 0 80px}
+.limits .bar{border-top:1px solid #C9D8CE;padding-top:28px}
+.limits h2{margin:0 0 16px;font-size:28px}
+.next{border-top:1px solid var(--bd);background:#F2F6F3}
+.next .narrow{padding-top:40px;padding-bottom:40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.next a{text-decoration:none;font-weight:600;color:var(--g)}
+
+@media (max-width:640px){
+  header.top{position:static}
+  html{scroll-padding-top:0}
+  .wrap,.narrow{padding:0 20px}
+  header.top nav{padding:14px 20px}
+  .links{gap:6px 16px;font-size:14px}
+  .sec{padding:64px 0}.sec h2{font-size:34px}
+  .hero{padding:72px 0}
+  .box{padding:24px}
+  .psec h2{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+<nav aria-label="Main">
+<a class="brand" href="#top">Pam Cassedy Dumangeng</a>
+<div class="links">
+<a href="#workflow">How I Work</a>
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#tools">Tools</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
+<main id="home">
+
+<section class="hero" id="top">
+<div class="wrap">
+<h1>Making sense of messy data<span>.</span></h1>
+<p>A collection of data analysis projects, each documenting how the data was prepared, analyzed and turned into recommendations.</p>
+<div class="row">
+<a class="btn" href="#projects">View Projects</a>
+<a class="btn ghost" href="#contact">Contact</a>
+</div>
+</div>
+</section>
+
+<section class="sec" id="workflow">
+<div class="wrap">
+<h2>How I Work</h2>
+<p class="lead">Each project follows the same three steps, from the original data to the final recommendations.</p>
+<div class="steps">
+<div class="step">
+<div class="mark"><span class="num" style="background:var(--clean)">01</span><span class="line" aria-hidden="true"></span></div>
+<h3 style="color:var(--clean)">Clean</h3>
+<p>The data is checked for duplicates, missing values and inconsistent records. Each issue is documented with the decision made, and the cleaned version is kept separate from the original data.</p>
+</div>
+<div class="step">
+<div class="mark"><span class="num" style="background:var(--analyze)">02</span><span class="line" aria-hidden="true"></span></div>
+<h3 style="color:var(--analyze)">Analyze</h3>
+<p>The data is first explored to understand its patterns. Each key question is then answered separately using SQL, Python or machine learning, and every result is saved for review.</p>
+</div>
+<div class="step">
+<div class="mark"><span class="num" style="background:var(--rec)">03</span><span class="line" aria-hidden="true"></span></div>
+<h3 style="color:var(--rec)">Recommend</h3>
+<p>The findings are translated into practical recommendations and presented in an interactive dashboard, along with the limitations of the analysis.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="projects" style="padding-top:0">
+<div class="wrap">
+<h2>Projects</h2>
+<p class="lead">Each project page presents the work through the three steps above.</p>
+<div class="cards" id="cards"></div>
+</div>
+</section>
+
+<section class="sec green" id="about">
+<div class="wrap about">
+<div>
+<h2>About Me</h2>
+<p>You can call me Pam or Cassedy. I learn best through hands-on work, and this has shaped how I approach the projects and challenges I take on.</p>
+<p>I value work that gives me something to figure out, something to learn, and something I can look back on and understand better than I did before.</p>
+</div>
+<div class="facts">
+<div class="fact"><span class="k">Education</span><div class="v"><p class="t">Bachelor of Science in Data Science</p><p style="color:var(--on-g)">Mapua University, 2023 to 2026</p></div></div>
+<div class="fact"><span class="k">Experience</span><div class="v"><p class="t">Data Analytics Intern</p><p style="color:var(--on-g);margin-bottom:10px">Mapua University, Office of Digital Education, Learning Technologies, and Analytics (DELTA), May to July 2026</p><p style="color:var(--on-g)">During my internship, I cleaned and analyzed survey data in Python through data preprocessing and exploratory data analysis. I also designed an interactive multi-page Power BI dashboard to present the results of a VR application evaluation.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="tools">
+<div class="wrap">
+<h2>Tools</h2>
+<p class="lead">These are the tools I use across cleaning, analysis and visualization.</p>
+<div id="toolgroups"></div>
+</div>
+</section>
+
+<section class="sec green" id="certifications">
+<div class="wrap">
+<h2>Certifications</h2>
+<p class="lead" style="color:var(--on-g2)">These specializations and courses were completed on Coursera.</p>
+<div id="certs"></div>
+</div>
+</section>
+
+<section class="sec contact" id="contact">
+<div class="wrap">
+<h2>Contact</h2>
+<p>I am open to entry-level data roles and would be glad to discuss any of these projects.</p>
+<div class="row">
+<a class="btn solid" href="mailto:pamcassedyd@gmail.com">pamcassedyd@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/pam-cassedy-dumangeng-65946b364" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/pcassedy" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<main id="detail"></main>
+
+<footer>Pam Cassedy Dumangeng · Quezon City, Philippines</footer>
+
+<script>
+/* ---------- TOOLS ---------- */
+const DI="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+const ICON={
+  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>',
+  pie:'<svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></svg>',
+  db:'<svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>'
+};
+const tools=[
+  ["Programming",[["Python",DI+"python/python-original.svg"],["SQL","db"],["R",DI+"r/r-original.svg"]]],
+  ["Visualization",[["Tableau","images/tableau.png"],["Power BI","images/powerbi.png"],["Looker Studio","pie"]]],
+  ["Tools and Environment",[["Jupyter Notebook",DI+"jupyter/jupyter-original.svg"],["Google Colab",DI+"googlecolab/googlecolab-original.svg"],["MySQL Workbench",DI+"mysql/mysql-original.svg"],["VS Code",DI+"vscode/vscode-original.svg"]]]
+];
+document.getElementById("toolgroups").innerHTML=tools.map(([g,items])=>
+  `<div class="tgroup"><h3>${g}</h3><div class="tiles">${items.map(([n,i])=>
+    `<div class="tile">${ICON[i]||`<img src="${i}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`}<span>${n}</span></div>`).join("")}</div></div>`).join("");
+
+/* ---------- CERTIFICATIONS ---------- */
+/* Add each Coursera share link as the fourth item, for example "https://coursera.org/verify/...". The button appears once a link is added. */
+const certs=[
+  ["Microsoft Power Platform Developer Specialization","Whizlabs","May 2026",""],
+  ["Microsoft Generative AI for Data Analysis Specialization","Microsoft","April 2026",""],
+  ["Data Visualization with Tableau Specialization","University of California, Davis","March 2026",""],
+  ["Database Management Essentials","University of Colorado","June 2025",""],
+  ["Business Intelligence (BI) Essentials","IBM","February 2025",""],
+  ["Exploratory Data Analysis","University of Leeds","September 2024",""],
+  ["Python Packages for Data Science","University of Colorado Boulder","April 2024",""]
+];
+document.getElementById("certs").innerHTML=certs.map(([t,o,d,l])=>
+  `<div class="cert"><div><p class="t">${t}</p><p class="s">${o} · ${d}</p></div>${l?`<a href="${l}" target="_blank" rel="noopener">View Certificate</a>`:""}</div>`).join("");
+
+/* ---------- PROJECTS ---------- */
+const GH="https://github.com/pcassedy/";
+const RAW="https://raw.githubusercontent.com/pcassedy/";
+const P=[
+{
+ id:"superstore", title:"Inside the Superstore", subtitle:"An Analysis of Sales and Profitability",
+ cover:"images/superstore-dashboard.png", chips:["MySQL","Tableau"],
+ card:"This project analyzes sales and profitability from 2023 to 2026, with a focus on how discount levels affect profit.",
+ highlight:"Sales discounted above 20% accounted for 88.6% of all losses.",
+ links:[["View Project Files",GH+"inside-the-superstore",1]],
+ overview:"Superstore's sales grew steadily from 2023 to 2026, but sales alone do not show whether the business is healthy. This project looks beyond revenue to identify which products, discounts, regions and customers add to profit and which ones reduce it. The analysis was conducted entirely in MySQL, and the results are presented in a one-page Tableau dashboard.",
+ dataset:{text:"The project uses Tableau's Sample Superstore dataset, which covers January 2023 to December 2026 and includes 5,111 orders, 804 customers, 1,862 products and 17 sub-categories across the United States and Canada.",
+   table:[["Sheet","Contents","Rows"],["Orders","One row per product in an order, with dates, customer, location, product, sales, quantity, discount and profit","10,194"],["Returns","Orders that were returned","296"],["People","The regional manager for each region","4"]]},
+ tools:[["MySQL 8.0","Loading, exploring, cleaning and analyzing the data"],["Tableau Public","Building the interactive dashboard"],["Excel","Converting the original file into CSVs for import"]],
+ questions:["How have sales and profit changed from 2023 to 2026?","Which categories and sub-categories make or lose money?","How do discounts affect profit, and at what level do orders start losing money?","Which regions are underperforming, and do discounts or returns explain it?","Which customers bring in the most profit?","Which products should Superstore protect, fix, grow or review?","How much profit was lost on orders discounted above 20%?"],
+ sections:[
+  {step:"clean",blocks:[
+   {h:"Data Quality Assessment",p:"The three CSV files were loaded into MySQL, and the order and ship dates, which were stored as text, were converted to proper dates using STR_TO_DATE. Row counts, date ranges, missing values, numeric ranges and category values were then reviewed, followed by tests for duplicates, impossible dates and inconsistent IDs."},
+   {h:"Issues and Resolutions",table:[["Issue","Resolution"],["Two duplicate rows","The extra copies were removed."],["449 US postal codes missing their leading zero","The leading zero was restored using LPAD."],["32 product IDs shared by two different products","Both were kept, and products were identified by ID and name together."],["200 Canadian rows grouped into US regions","The rows were kept as is and noted as a limitation."]]},
+   {h:"Approach",p:"A view named orders_clean was created to remove duplicates, correct postal codes, join the Returns and People sheets, and add columns for profit margin, discount band, shipping days, order year and return status."},
+   {decision:"A view called orders_clean was built instead of changing the raw table, so the original data stays untouched."}
+  ]},
+  {step:"analyze",blocks:[
+   {h:"Methods",p:"Each key question was answered with a separate SQL query using common table expressions, joins, CASE statements and window functions such as LAG, NTILE and ROW_NUMBER. Each result was exported as a CSV file for review."},
+   {h:"Key Findings",link:["Read Full Findings (PDF)",GH+"inside-the-superstore/blob/59032a5b18285a401f0060a2985f46f44850d684/other%20files/Findings.pdf"],stats:[["88.6%","of all losses came from sales discounted above 20%."],["2.6%","profit margin for Furniture, compared with about 17% for Technology and Office Supplies."],["81.5%","of total profit was earned from the top 20% of customers."],["7.9%","profit margin in the Central region, which also had the deepest average discount."]]},
+   {p:"Central's low margin appears to be linked to its discounts rather than the region itself. In Technology, where Central's discounts were in line with other regions, it had the highest margin of any region."}
+  ]},
+  {step:"recommend",blocks:[
+   {h:"Recommendations",link:["Read Full Recommendations (PDF)",GH+"inside-the-superstore/blob/59032a5b18285a401f0060a2985f46f44850d684/other%20files/Recommendations.pdf"],recs:[["A maximum discount of 20%","Sales discounted above 20% caused 88.6% of all losses. Deeper discounts should require managerial approval, starting with Binders, Tables and Machines, which accounted for about 73% of these losses."],["A pilot of the discount limit in the Central region","Applying the limit in Central for one season would show its effect while limiting the risk to a single region."],["Retention of top customers through service benefits and high-margin add-ons","Benefits such as faster shipping or a dedicated account contact would reward top customers without reducing margins. Offering high-margin supplies alongside large purchases would also raise the profit of each order."]]},
+   {h:"Dashboard",p:"A one-page Tableau dashboard presents the key figures, profit by sub-category, sales and profit trends, profit by discount level and regional performance. A year selector updates every chart.",images:[["images/superstore-dashboard.png","Inside the Superstore Tableau dashboard"]]}
+  ]}
+ ],
+ limits:["Superstore is fictional sample data from Tableau, so the findings demonstrate analysis methods rather than real business results.","The profit figures do not appear to subtract returned orders, so the effect of returns on profit could not be measured directly.","The link between Central's discounts and its low margin is a strong pattern, not a proven cause.","The 200 Canadian rows are grouped into US regions in the original data."]
+},
+{
+ id:"flood-control", title:"Philippines Flood Control Projects", subtitle:"An Interactive Dashboard of Flood Control Projects Across the Philippines, 2018 to 2025",
+ cover:"images/flood-dashboard.png", chips:["Python","Power BI"],
+ card:"This project examines ₱545 billion in flood control spending, including when and where it was spent, the contractors involved and whether projects were completed on time.",
+ highlight:"94% of total spending occurred between 2022 and 2024.",
+ links:[["View Project Files",GH+"ph-flood-control-analysis",1]],
+ overview:"This project follows the money spent on flood control projects in the Philippines by examining when it was spent, which provinces received it, which contractors built the projects, and whether the work was finished on time. The data was cleaned and explored in Python, then presented in a single-page Power BI dashboard that viewers can filter by year, region, province and type of work.",
+ dataset:{text:"The project uses flood control project data from the BetterGov Open Data Portal.",
+   table:[["Item","Details"],["Coverage","2018 to 2025 (infrastructure year)"],["Records","9,827 projects across 98 provinces and 16 regions"],["Contractors","2,409 contractor names, including joint ventures"],["Work types","18 types of flood control work"]]},
+ tools:[["Python (Jupyter Notebook)","Loading, cleaning and exploring the data"],["Power BI Desktop","Building the interactive dashboard"],["DAX","Measures and calculated columns for the dashboard"]],
+ questions:["When was the money spent?","Where did it go?","Who built the projects?","How well did the projects go?"],
+ sections:[
+  {step:"clean",blocks:[
+   {h:"Data Quality Assessment",p:"The raw file is an ArcGIS JSON export, so the records were first flattened into a single table of 9,855 rows and 33 columns. The structure, missing values and duplicates were then checked before any changes were made."},
+   {h:"Issues and Resolutions",table:[["Issue","Resolution"],["28 project IDs repeated across 55 rows","These were multi-year contracts listed once per funding year. Only the earliest-year row of each project was kept."],["Eight columns with no useful information, including an empty Program column","The eight columns were removed."],["Three date columns stored in different formats","All three columns were converted to proper dates."],["Four projects with no original completion date","The values were left empty, since the planned date is unknown and should not be guessed."],["638 projects with no municipality","The rows were filled with “Unknown” so they stay visible as a group instead of being excluded."]]},
+   {h:"Approach",p:"All cleaning was done on a copy of the data, so the raw data stayed untouched for comparison. A new column for project duration was added, and the cleaned data was validated against the raw data before being exported for analysis and the dashboard."},
+   {decision:"Only the first-year row of each multi-year project was kept, because the full contract cost appears in every row and summing all of them would count those projects two to three times."}
+  ]},
+  {step:"analyze",blocks:[
+   {h:"Methods",p:"The cleaned data was explored in Python to answer each question, covering spending over time, geography, contractors, project duration and type of work. The median was used for duration comparisons, since a small number of very long projects pull the average up."},
+   {h:"Key Findings",link:["Read Full Findings (PDF)",GH+"ph-flood-control-analysis/blob/5f7fa67bc983bf94a77213539999c5194f6764c2/other%20files/Findings.pdf"],stats:[["₱545.43B","in total contract cost across 9,827 projects."],["94%","of spending occurred between 2022 and 2024, peaking at ₱203 billion in 2023."],["₱43.8B","went to Bulacan, the top province, or about 8% of the total."],["91%","of projects finished on time or early."]]},
+   {list:["The top five provinces together hold about 24% of total spending, and Region III accounts for about 18%.","Spending is not concentrated in a few contractors, as the top 10 contractors hold about 10% of the total.","Construction of flood mitigation structures makes up about two-thirds of all spending.","Projects that finished late (9.2%) ran a median of about 109 days behind the original target date."]},
+   {decision:"A 30-day margin was used to define on-time completion, because without it about 56% of projects would count as late, mostly by a single day."}
+  ]},
+  {step:"recommend",blocks:[
+   {h:"Recommendations",link:["Read Full Recommendations (PDF)",GH+"ph-flood-control-analysis/blob/5f7fa67bc983bf94a77213539999c5194f6764c2/other%20files/Recommendations.pdf"],recs:[["Schedule monitoring focused on the regions with the highest late rates","In Regions IX, X, I and VI, about one in five projects finished late."],["Closer schedule oversight for smaller contracts","The smallest contracts were late about three to four times as often as the largest."],["More complete published project data","The published data would be more useful with final amounts paid, ongoing projects and standardized contractor names."]]},
+   {h:"Dashboard",p:"The single-page Power BI dashboard has four charts, four headline cards and filters for year, region, province and type of work. Every chart and card updates with the filters, and clicking any bar or slice filters the other charts.",images:[["images/flood-dashboard.png","Philippines Flood Control Power BI dashboard"]]},
+   {decision:"The approved budget was not used, because it repeats on every row of a contract split into several components and would overcount spending by about ₱11 billion."}
+  ]}
+ ],
+ limits:["The years 2018 to 2020 contain little data and 2025 is a partial year, so low spending in those years does not mean low activity.","On-time results should not be compared across years, since later years only include completed projects.","Contract cost is the awarded amount, not the final amount paid."]
+},
+{
+ id:"where-coffee-flows", title:"Where Coffee Flows", subtitle:"An End-to-End Analysis of Global Coffee Production and Trade",
+ cover:"images/coffee-1-overview.png", chips:["Python","scikit-learn","Power BI"],
+ card:"This project analyzes global coffee production and trade from 2000 to 2024 using FAOSTAT data.",
+ highlight:"KMeans clustering grouped 209 countries into five trade roles.",
+ links:[["View Project Files",GH+"where-coffee-flows",1]],
+ overview:"Coffee is grown in a few regions but traded almost everywhere, and production and trade data live in separate tables that are hard to compare. This project examines who grows coffee, who buys it, and what role each country plays in the global market.",
+ dataset:{text:"The project uses FAOSTAT green coffee production and trade data for 2000 to 2024. After merging, the dataset has 11,539 country-year records across 209 countries, where each row is one country in one year. Country-level profiles for 201 countries were used for clustering."},
+ tools:[["Python (Jupyter Notebook)","Cleaning, exploration, metrics and clustering"],["pandas, NumPy","Data preparation and calculations"],["Matplotlib, Seaborn","Exploratory charts"],["scikit-learn","KMeans clustering, scaling and PCA"],["Power BI (Power Query, DAX)","Building the interactive dashboard"]],
+ questions:["Who grows the world's coffee?","Who buys it?","What role does each country play in the global coffee market?"],
+ sections:[
+  {step:"clean",blocks:[
+   {h:"Data Quality Assessment",p:"Raw FAOSTAT production and trade data were loaded and inspected for structure, missing values and quality flags. Production data were reshaped from long to wide format, with production, harvested area and yield stored as separate columns."},
+   {h:"Approach",p:"Production and trade data were explored separately, then combined using an outer join so that countries appearing only in the trade data, such as re-exporters and trade hubs, were kept."},
+   {decision:"Missing production values were kept as missing rather than replaced with zero, since they represent unavailable reporting rather than zero production."}
+  ]},
+  {step:"analyze",blocks:[
+   {h:"Methods",p:"Additional metrics were created, including export share of production, year-over-year production and yield growth, export value per tonne and trade balance. These were aggregated into one profile per country, and KMeans clustering was applied after power transformation and scaling. PCA was used for two-dimensional visualization of the clusters."},
+   {h:"Key Findings",stats:[["11M tonnes","of coffee were produced worldwide in 2024, up from about 4.5 million in 2000."],["90%","growth in Asia's coffee production between 2000 and 2024, driven mainly by Vietnam."],["30.1%","of global production in 2024 came from Brazil."],["5","trade roles were identified by clustering."]]},
+   {list:["South America accounted for 41.6% of global production in 2024.","The United States, Germany and Italy are the largest importers by value.","200 countries import coffee, while 190 export it.","Most countries are peripheral to the coffee market rather than core growers or major importers, and only four are mega importers."]},
+   {decision:"Five clusters were selected after elbow and silhouette analysis, as this number gave better analytical separation between country roles."}
+  ]},
+  {step:null,title:"Dashboard",blocks:[
+   {p:"The Power BI report has a title page and five pages covering an overview, where coffee grows, where coffee goes, who drives the trade, and a filterable data table.",images:[["images/coffee-1-overview.png","Overview page"],["images/coffee-2-grows.png","Where Coffee Grows page"],["images/coffee-3-goes.png","Where Coffee Goes page"],["images/coffee-4-drivers.png","Who Drives the Trade page"],["images/coffee-5-explore.png","Explore the Data page"]]}
+  ]}
+ ],
+ limits:[]
+},
+{
+ id:"dengue-risk-thesis", title:"Dengue Risk Assessment in CALABARZON", subtitle:"A Data Analysis Approach to Dengue Risk Assessment in CALABARZON Using Machine Learning",
+ team:"Undergraduate thesis, co-authored with Gio Miguel Bihasa and Alexandra Santos.",
+ role:"My contributions included data collection and standardization, and I developed the team's interactive dengue risk dashboard in Looker Studio.",
+ cover:"images/dengue-dashboard-overview.png", chips:["Python","XGBoost","SHAP","Looker Studio"],
+ card:"This undergraduate thesis presents a machine learning framework that classifies municipality-level dengue risk using climate, environmental and socioeconomic data.",
+ highlight:"",
+ links:[["View Dashboard","https://pcassedy.github.io/dengue-risk-classification-thesis/",1],["View Project Files",GH+"dengue-risk-classification-thesis"]],
+ overview:"Dengue is a major public health concern in the Philippines, but risk assessment has mostly focused on climate alone, even though socioeconomic and environmental factors also affect transmission. This study examines whether combining all three types of data can classify dengue risk more effectively and help local governments decide where to focus prevention efforts.",
+ dataset:{text:"The study uses municipality-level data from 2020 to 2024, merged from several sources using location and date as keys. The dengue case data was obtained through a formal request to the Department of Health for academic research use, so the dataset is not shared publicly.",
+   table:[["Data","Source"],["Dengue cases","Department of Health (DOH)"],["Climate","Open-Meteo"],["Socioeconomic","PSA, DOH, Rural Health Units, DOH-licensed facilities and DTI municipality class"],["Environmental","NOAH, PSA and Geoportal Philippines"]]},
+ tools:[["Python (pandas, NumPy, SciPy)","Data cleaning, merging and statistical testing"],["scikit-learn, XGBoost","Training, tuning and evaluating the classification models"],["SHAP","Interpreting the final model"],["Matplotlib","Charts and risk maps"],["Looker Studio","Interactive dengue risk dashboard"]],
+ questions:["Can climate, socioeconomic and environmental data together classify dengue risk more effectively than climate alone?","Which machine learning model classifies municipality-level dengue risk most accurately?","Which factors contribute most to dengue risk in CALABARZON?"],
+ sections:[
+  {step:"clean",blocks:[
+   {h:"Data Preparation",list:["Data was gathered from government agencies and publicly available portals, then cleaned by handling missing values, removing duplicates and standardizing formats.","The datasets were merged by location and date into a single municipality-level dataset.","The variables were explored using descriptive statistics, correlation analysis, ANOVA and chi-square tests of independence.","Feature engineering was performed before model development."]}
+  ]},
+  {step:"analyze",blocks:[
+   {h:"Risk Labeling",p:"Each municipality-month observation was labeled using that municipality's own historical dengue incidence (cases per 1,000 population), based on its mean (x̄) and standard deviation (s)."},
+   {table:[["Risk Level","Condition"],["High","Dengue incidence above x̄ + 1.5s"],["Medium","Dengue incidence between x̄ and x̄ + 1.5s"],["Low","Dengue incidence below x̄"]]},
+   {p:"After classification, the results were aggregated per municipality and compared against percentile-based thresholds, consistent with epidemic alert methods used in dengue surveillance, to produce the final municipality-level risk label."},
+   {h:"Methods",list:["The data was split into 80% training and 20% testing sets.","Four classifiers were trained and compared across single, pairwise and combined feature sets, using randomized search and K-fold cross-validation for tuning.","The models were evaluated using accuracy, precision, recall, F1 score and confusion matrices.","Feature importance and SHAP analysis were used to interpret the final model."]},
+   {h:"Model Comparison",p:"The table below shows each model's results on the hold-out test set when trained on the full combined feature set.",
+    table:[["Model","Accuracy","Weighted F1"],["Logistic Regression","73.93%","67.76%"],["Support Vector Machine","75.38%","73.81%"],["Random Forest","79.71%","78.46%"],["XGBoost","82.06%","81.05%"]]},
+   {h:"Key Findings",stats:[["82.06%","accuracy for the final XGBoost model, with an F1-score of 81.05%."],["0.234","SHAP value for temperature, the most influential feature."],["7","feature combinations tested for each of the four models."]]},
+   {list:["XGBoost performed best overall across the feature combinations tested.","Temperature, relative humidity and total population were the most influential individual features based on SHAP values.","Environmental land-use variables, including forest cover and built-up or barren areas, also ranked highly.","The results suggest that dengue risk is influenced by the interaction of climate, environmental and socioeconomic factors rather than by climate alone."]},
+   {h:"Additional Analyses",list:["Lag models tested whether past dengue incidence and past climate conditions improve classification. These were run separately from the final model.","A deliberate data leakage demonstration reached 99.16% accuracy, showing how leaked information can make a model appear far more accurate than it really is."]},
+   {decision:"The full Climate + Socioeconomic + Environmental feature set was selected for the final model instead of the slightly more accurate Socioeconomic + Environmental combination (82.30%), to provide a more complete representation of dengue risk factors."}
+  ]},
+  {step:null,title:"Dashboard",blocks:[
+   {p:"The Looker Studio dashboard has two pages. The Overview page shows the number of high, medium and low risk areas, a risk map and a table of municipalities and cities, with filters for province, year and risk level. The Risk Drivers page compares the SHAP values and model feature importance of each variable, grouped into climate, environmental and socioeconomic factors.",
+    images:[["images/dengue-dashboard-overview.png","Dengue Risk Dashboard overview page"],["images/dengue-dashboard-drivers.png","Dengue Risk Dashboard risk drivers page"]]}
+  ]}
+ ],
+ limits:[]
+},
+{
+ id:"rawtoready", title:"RawtoReady", subtitle:"A Web-Based Automated Tool for Data Cleaning and Preparation",
+ team:"Co-developed with Gio Miguel Bihasa, Kim Caryl Esperanza and Louella Josephine Ng.",
+ role:"My work focused on the frontend of the tool, including the interface, design, layout, theme and loading time, as well as parts of the results display. I also added the numeric anomaly detection feature.",
+ award:"1st Place, Undergraduate Research Competition, 3rd GCC International Conference on IEOM, Tabuk, Saudi Arabia (February 2026)",
+ cover:null, chips:["Python","Streamlit","SQLite"],
+ card:"This web-based tool, developed as a team project, automates data cleaning and preparation in a single step.",
+ highlight:"The tool was evaluated for usability with 56 users.",
+ links:[["Try the Live Demo","https://rawtoready-sprint5.streamlit.app/",1],["Watch the Video Demo","https://drive.google.com/file/d/1-o3EA1OZRPGqbD24pGHOJF66pMwagDic/view?usp=sharing"],["Read the Paper","https://doi.org/10.46254/GC03.20250536"],["View Project Files",GH+"RawtoReady"]],
+ overview:"Data cleaning is time-consuming and often requires technical skills or specialized software, which can make data preparation difficult for students, researchers and professionals without programming experience. This project explores whether common, repetitive cleaning tasks can be packaged into a tool that makes data preparation more accessible.",
+ dataset:{text:"The tool works with any dataset a user uploads rather than a single fixed dataset. For evaluation, 56 participants assessed its usability, effectiveness and satisfaction through a questionnaire based on Edward de Bono's Six Thinking Hats method."},
+ tools:[["Python (pandas, NumPy, regex, difflib)","Cleaning logic"],["Streamlit","Web interface"],["SQLite","User accounts and cleaning history"],["SHA-256 hashing","Password security"]],
+ questions:[],
+ sections:[
+  {step:"clean",title:"Features",blocks:[
+   {p:"The tool offers one-click options to fill or drop missing values, remove duplicate rows, standardize column names, normalize text, fix date formats, validate email addresses, standardize similar text values and detect numeric anomalies using a z-score method. Each run produces a summary report with statistics before and after cleaning, and the cleaned file can be downloaded as a CSV."}
+  ]},
+  {step:null,title:"Evaluation and Results",blocks:[
+   {h:"Approach",list:["A guided four-step workflow lets users upload their data, select cleaning options, run the process and download the cleaned file with a summary of the changes.","The tool was evaluated through a survey of 56 participants, focusing on usability, efficiency and overall user experience.","The study was documented as a research paper, presented at an international conference and published in the conference proceedings (DOI 10.46254/GC03.20250536)."]},
+   {h:"Results",list:["Users found the tool efficient, accessible and easy to use for preparing and cleaning data.","The tool reduced the time and effort required for manual data cleaning, while users reported greater confidence, organization and control during the process.","The study won 1st place in the Undergraduate Research Competition at the 3rd GCC International Conference on IEOM.","The study contributes to UN Sustainable Development Goals 4 (Quality Education) and 9 (Industry, Innovation and Infrastructure)."]}
+  ]}
+ ],
+ limits:[]
+}
+];
+
+const STEP={clean:["01","Clean","var(--clean)","var(--clean-t)"],analyze:["02","Analyze","var(--analyze)","var(--analyze-t)"],recommend:["03","Recommend","var(--rec)","var(--rec-t)"]};
+const esc=s=>s;
+
+document.getElementById("cards").innerHTML=P.map(p=>`
+<a class="card" href="#project/${p.id}">
+${p.cover?`<img class="cover${p.fit?" fit":""}" src="${p.cover}" alt="${p.title} preview" loading="lazy">`:`<div class="rtr" aria-hidden="true"><span>Raw</span><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg><span>Ready</span></div>`}
+<div class="body">
+<div class="chips">${p.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+<h3>${p.title}</h3>
+<p>${p.card}</p>
+</div>
+</a>`).join("");
+
+function table(rows){return `<div class="tbl"><table><thead><tr>${rows[0].map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.slice(1).map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`}
+
+function block(b,color){
+  let h="";
+  if(b.h)h+=`<h3 class="sub">${b.h}</h3>`;
+  if(b.link)h+=`<p style="margin:-4px 0 16px"><a class="btn sm" href="${b.link[1]}" target="_blank" rel="noopener">${b.link[0]}</a></p>`;
+  if(b.p)h+=`<p>${b.p}</p>`;
+  if(b.list)h+=`<ul>${b.list.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+  if(b.table)h+=table(b.table);
+  if(b.stats)h+=`<div class="stats">${b.stats.map(([n,t])=>`<div class="stat"><b style="color:${color}">${n}</b><span>${t}</span></div>`).join("")}</div>`;
+  if(b.recs)h+=`<div class="recs">${b.recs.map(([t,d],i)=>`<div class="rec"><span class="n">${i+1}</span><div><p class="t">${t}</p><p class="d">${d}</p></div></div>`).join("")}</div>`;
+  if(b.images)h+=`<div class="gallery">${b.images.map(([s,a])=>`<img src="${s}" alt="${a}" loading="lazy">`).join("")}</div>`;
+  if(b.decision)h+=`<div class="decision"><p class="k" style="color:${color}">Key Decision</p><p>${b.decision}</p></div>`;
+  return `<div class="blk">${h}</div>`;
+}
+
+function render(id){
+  const i=P.findIndex(x=>x.id===id); if(i<0){location.hash="projects";return}
+  const p=P[i], nx=P[(i+1)%P.length];
+  const numbered=p.sections.filter(s=>s.step&&!s.title);
+  document.getElementById("detail").innerHTML=`
+<section class="pd-top"><div class="narrow">
+<a class="back" href="#projects"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>All Projects</a>
+<h1>${p.title}</h1>
+<p class="subt">${p.subtitle}</p>
+${p.team?`<p class="team">${p.team}</p>`:""}
+${p.award?`<span class="award">${p.award}</span>`:""}
+${p.role?`<div class="role"><p class="k">My Role</p><p>${p.role}</p></div>`:""}
+<div class="row">${p.links.map(([t,u,s])=>`<a class="btn sm${s?" solid":""}" href="${u}" target="_blank" rel="noopener">${t}</a>`).join("")}</div>
+</div></section>
+
+<section class="pd"><div class="narrow">
+<div class="box">
+<div><h2>Project Overview</h2><p>${p.overview}</p></div>
+<div><h3 class="sub">${p.id==="rawtoready"?"Data and Evaluation":"Dataset"}</h3><p>${p.dataset.text}</p>${p.dataset.table?table(p.dataset.table):""}</div>
+<div><h3 class="sub">Tools Used</h3>${table([["Tool","Purpose"],...p.tools])}</div>
+${p.questions.length?`<div><h3 class="sub">Key Questions</h3><ol>${p.questions.map(q=>`<li>${q}</li>`).join("")}</ol></div>`:""}
+</div>
+${numbered.length>1?`<nav class="stepnav" aria-label="Steps">${numbered.map(s=>{const k=STEP[s.step];return `<a href="#" data-jump="${p.id}-${s.step}" style="background:${k[3]};color:${k[2]}">${k[0]} ${k[1]}</a>`}).join("")}</nav>`:""}
+${p.sections.map(s=>{
+  const k=s.step&&!s.title?STEP[s.step]:null;
+  const color=k?k[2]:(s.step?STEP[s.step][2]:"var(--g)");
+  return `<div class="psec" id="${p.id}-${s.step||"extra"}"><div class="bar" style="border-color:${color}">
+${k?`<p class="lab" style="color:${color}">STEP ${k[0]}</p>`:""}
+<h2 style="color:${color}">${k?k[1]:s.title}</h2>
+${s.blocks.map(b=>block(b,color)).join("")}
+</div></div>`}).join("")}
+${p.limits.length?`<div class="limits"><div class="bar"><h2>Limitations</h2><ul>${p.limits.map(l=>`<li>${l}</li>`).join("")}</ul></div></div>`:`<div style="height:56px"></div>`}
+</div></section>
+
+<section class="next"><div class="narrow">
+<a href="#projects">All Projects</a>
+<a href="#project/${nx.id}">Next Project · ${nx.title} →</a>
+</div></section>`;
+  document.querySelectorAll("[data-jump]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();document.getElementById(a.dataset.jump).scrollIntoView({behavior:"smooth"})}));
+  document.title=p.title+" | Pam Cassedy Dumangeng";
+}
+
+function route(){
+  const h=location.hash.slice(1);
+  if(h.startsWith("project/")){
+    document.body.classList.add("detail");
+    render(h.slice(8));
+    window.scrollTo(0,0);
+  }else{
+    const wasDetail=document.body.classList.contains("detail");
+    document.body.classList.remove("detail");
+    document.title="Pam Cassedy Dumangeng | Data Analysis Portfolio";
+    if(wasDetail&&h){const el=document.getElementById(h);if(el)el.scrollIntoView();}
+  }
+}
+window.addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
+
