@@ -316,7 +316,7 @@ const P=[
  cover:"images/superstore-dashboard.png", chips:["MySQL","Tableau"],
  card:"This project analyzes sales and profitability from 2023 to 2026, with a focus on how discount levels affect profit.",
  highlight:"Sales discounted above 20% accounted for 88.6% of all losses.",
- links:[["View Project Files",GH+"inside-the-superstore",1],["Read Full Findings (PDF)",GH+"inside-the-superstore/blob/59032a5b18285a401f0060a2985f46f44850d684/other%20files/Findings.pdf"],["Read Full Recommendations (PDF)",GH+"inside-the-superstore/blob/59032a5b18285a401f0060a2985f46f44850d684/other%20files/Recommendations.pdf"]],
+ links:[["View Project Files",GH+"inside-the-superstore",1]],
  overview:"Superstore's sales grew steadily from 2023 to 2026, but sales alone do not show whether the business is healthy. This project looks beyond revenue to identify which products, discounts, regions and customers add to profit and which ones reduce it. The analysis was conducted entirely in MySQL, and the results are presented in a one-page Tableau dashboard.",
  dataset:{text:"The project uses Tableau's Sample Superstore dataset, which covers January 2023 to December 2026 and includes 5,111 orders, 804 customers, 1,862 products and 17 sub-categories across the United States and Canada.",
    table:[["Sheet","Contents","Rows"],["Orders","One row per product in an order, with dates, customer, location, product, sales, quantity, discount and profit","10,194"],["Returns","Orders that were returned","296"],["People","The regional manager for each region","4"]]},
@@ -331,11 +331,11 @@ const P=[
   ]},
   {step:"analyze",blocks:[
    {h:"Methods",p:"Each key question was answered with a separate SQL query using common table expressions, joins, CASE statements and window functions such as LAG, NTILE and ROW_NUMBER. Each result was exported as a CSV file for review."},
-   {h:"Key Findings",stats:[["88.6%","of all losses came from sales discounted above 20%."],["2.6%","profit margin for Furniture, compared with about 17% for Technology and Office Supplies."],["81.5%","of total profit was earned from the top 20% of customers."],["7.9%","profit margin in the Central region, which also had the deepest average discount."]]},
+   {h:"Key Findings",link:["Read Full Findings (PDF)",GH+"inside-the-superstore/blob/59032a5b18285a401f0060a2985f46f44850d684/other%20files/Findings.pdf"],stats:[["88.6%","of all losses came from sales discounted above 20%."],["2.6%","profit margin for Furniture, compared with about 17% for Technology and Office Supplies."],["81.5%","of total profit was earned from the top 20% of customers."],["7.9%","profit margin in the Central region, which also had the deepest average discount."]]},
    {p:"Central's low margin appears to be linked to its discounts rather than the region itself. In Technology, where Central's discounts were in line with other regions, it had the highest margin of any region."}
   ]},
   {step:"recommend",blocks:[
-   {h:"Recommendations",recs:[["A maximum discount of 20%","Sales discounted above 20% caused 88.6% of all losses. Deeper discounts should require managerial approval, starting with Binders, Tables and Machines, which accounted for about 73% of these losses."],["A pilot of the discount limit in the Central region","Applying the limit in Central for one season would show its effect while limiting the risk to a single region."],["Retention of top customers through service benefits and high-margin add-ons","Benefits such as faster shipping or a dedicated account contact would reward top customers without reducing margins. Offering high-margin supplies alongside large purchases would also raise the profit of each order."]]},
+   {h:"Recommendations",link:["Read Full Recommendations (PDF)",GH+"inside-the-superstore/blob/59032a5b18285a401f0060a2985f46f44850d684/other%20files/Recommendations.pdf"],recs:[["A maximum discount of 20%","Sales discounted above 20% caused 88.6% of all losses. Deeper discounts should require managerial approval, starting with Binders, Tables and Machines, which accounted for about 73% of these losses."],["A pilot of the discount limit in the Central region","Applying the limit in Central for one season would show its effect while limiting the risk to a single region."],["Retention of top customers through service benefits and high-margin add-ons","Benefits such as faster shipping or a dedicated account contact would reward top customers without reducing margins. Offering high-margin supplies alongside large purchases would also raise the profit of each order."]]},
    {h:"Dashboard",p:"A one-page Tableau dashboard presents the key figures, profit by sub-category, sales and profit trends, profit by discount level and regional performance. A year selector updates every chart.",images:[["images/superstore-dashboard.png","Inside the Superstore Tableau dashboard"]]}
   ]}
  ],
@@ -346,7 +346,7 @@ const P=[
  cover:"images/flood-dashboard.png", chips:["Python","Power BI"],
  card:"This project examines ₱545 billion in flood control spending, including when and where it was spent, the contractors involved and whether projects were completed on time.",
  highlight:"94% of total spending occurred between 2022 and 2024.",
- links:[["View Project Files",GH+"ph-flood-control-analysis",1],["Read Full Findings (PDF)",GH+"ph-flood-control-analysis/blob/5f7fa67bc983bf94a77213539999c5194f6764c2/other%20files/Findings.pdf"],["Read Full Recommendations (PDF)",GH+"ph-flood-control-analysis/blob/5f7fa67bc983bf94a77213539999c5194f6764c2/other%20files/Recommendations.pdf"]],
+ links:[["View Project Files",GH+"ph-flood-control-analysis",1]],
  overview:"This project follows the money spent on flood control projects in the Philippines by examining when it was spent, which provinces received it, which contractors built the projects, and whether the work was finished on time. The data was cleaned and explored in Python, then presented in a single-page Power BI dashboard that viewers can filter by year, region, province and type of work.",
  dataset:{text:"The project uses flood control project data from the BetterGov Open Data Portal.",
    table:[["Item","Details"],["Coverage","2018 to 2025 (infrastructure year)"],["Records","9,827 projects across 98 provinces and 16 regions"],["Contractors","2,409 contractor names, including joint ventures"],["Work types","18 types of flood control work"]]},
@@ -361,12 +361,12 @@ const P=[
   ]},
   {step:"analyze",blocks:[
    {h:"Methods",p:"The cleaned data was explored in Python to answer each question, covering spending over time, geography, contractors, project duration and type of work. The median was used for duration comparisons, since a small number of very long projects pull the average up."},
-   {h:"Key Findings",stats:[["₱545.43B","in total contract cost across 9,827 projects."],["94%","of spending occurred between 2022 and 2024, peaking at ₱203 billion in 2023."],["₱43.8B","went to Bulacan, the top province, or about 8% of the total."],["91%","of projects finished on time or early."]]},
+   {h:"Key Findings",link:["Read Full Findings (PDF)",GH+"ph-flood-control-analysis/blob/5f7fa67bc983bf94a77213539999c5194f6764c2/other%20files/Findings.pdf"],stats:[["₱545.43B","in total contract cost across 9,827 projects."],["94%","of spending occurred between 2022 and 2024, peaking at ₱203 billion in 2023."],["₱43.8B","went to Bulacan, the top province, or about 8% of the total."],["91%","of projects finished on time or early."]]},
    {list:["The top five provinces together hold about 24% of total spending, and Region III accounts for about 18%.","Spending is not concentrated in a few contractors, as the top 10 contractors hold about 10% of the total.","Construction of flood mitigation structures makes up about two-thirds of all spending.","Projects that finished late (9.2%) ran a median of about 109 days behind the original target date."]},
    {decision:"A 30-day margin was used to define on-time completion, because without it about 56% of projects would count as late, mostly by a single day."}
   ]},
   {step:"recommend",blocks:[
-   {h:"Recommendations",recs:[["Schedule monitoring focused on the regions with the highest late rates","In Regions IX, X, I and VI, about one in five projects finished late."],["Closer schedule oversight for smaller contracts","The smallest contracts were late about three to four times as often as the largest."],["More complete published project data","The published data would be more useful with final amounts paid, ongoing projects and standardized contractor names."]]},
+   {h:"Recommendations",link:["Read Full Recommendations (PDF)",GH+"ph-flood-control-analysis/blob/5f7fa67bc983bf94a77213539999c5194f6764c2/other%20files/Recommendations.pdf"],recs:[["Schedule monitoring focused on the regions with the highest late rates","In Regions IX, X, I and VI, about one in five projects finished late."],["Closer schedule oversight for smaller contracts","The smallest contracts were late about three to four times as often as the largest."],["More complete published project data","The published data would be more useful with final amounts paid, ongoing projects and standardized contractor names."]]},
    {h:"Dashboard",p:"The single-page Power BI dashboard has four charts, four headline cards and filters for year, region, province and type of work. Every chart and card updates with the filters, and clicking any bar or slice filters the other charts.",images:[["images/flood-dashboard.png","Philippines Flood Control Power BI dashboard"]]},
    {decision:"The approved budget was not used, because it repeats on every row of a contract split into several components and would overcount spending by about ₱11 billion."}
   ]}
@@ -397,29 +397,6 @@ const P=[
   ]},
   {step:null,title:"Dashboard",blocks:[
    {p:"The Power BI report has a title page and five pages covering an overview, where coffee grows, where coffee goes, who drives the trade, and a filterable data table.",images:[["images/coffee-1-overview.png","Overview page"],["images/coffee-2-grows.png","Where Coffee Grows page"],["images/coffee-3-goes.png","Where Coffee Goes page"],["images/coffee-4-drivers.png","Who Drives the Trade page"],["images/coffee-5-explore.png","Explore the Data page"]]}
-  ]}
- ],
- limits:[]
-},
-{
- id:"covid-19-dashboard", title:"COVID-19 Pandemic Dashboard", subtitle:"An Interactive Tableau Dashboard of the Global Pandemic",
- team:"Developed with Kim Caryl Esperanza, Louella Josephine Ng and Gio Miguel Bihasa.",
- cover:RAW+"covid19-pandemic-dashboard/main/screenshots/00-summary.png", chips:["Tableau"],
- card:"This interactive dashboard, developed as a team project, presents global COVID-19 cases, deaths, vaccinations and hospitalizations.",
- highlight:"The dashboard draws on over 429,000 records across 255 locations.",
- links:[["View Live Dashboard","https://public.tableau.com/app/profile/pam.cassedy/viz/FinalProjectDataViz_17763998736500/Story1",1],["View Project Files",GH+"covid19-pandemic-dashboard"]],
- overview:"COVID-19 data is spread across dozens of measures and hundreds of locations, which makes it hard to see how cases, deaths, vaccination and hospital capacity relate. This project brings them together in one interactive dashboard that anyone can explore by metric, region and country.",
- dataset:{text:"The project uses the Our World in Data COVID-19 dataset, with 429,435 rows and 67 columns. Each row is one location on one day, from January 2020 to August 2024, covering 255 locations including countries and aggregates such as continents and the world."},
- tools:[["Tableau Public","Calculated fields, LOD expressions, parameters and dashboard actions"]],
- questions:[],
- sections:[
-  {step:"analyze",blocks:[
-   {h:"Methods",list:["The dataset was loaded into Tableau as an extract, so the workbook runs without extra downloads.","About 50 calculated fields were created, including fixed level-of-detail expressions that pull each country's latest value for cases, deaths and vaccinations.","Six parameters let viewers switch between total and new counts, choose a continent, change the vaccination metric and pick a comorbidity or age group.","A composite impact score combines new cases and new deaths per million people, with deaths weighted 10 times as heavily as cases.","The 27 worksheets were assembled into a summary page and four dashboards, with titles, labels and KPI cards that update to match each selection."]},
-   {h:"Key Figures",stats:[["775M+","people contracted COVID-19 worldwide during the pandemic."],["7M+","deaths were reported."],["5B","people were fully vaccinated."]]}
-  ]},
-  {step:null,title:"Dashboard",blocks:[
-   {list:["The Summary page introduces the pandemic and the headline numbers, with a guide to each page.","The Overview page shows a global map, cases and deaths over time, headline totals and the top five contributing countries.","The Population Impact page shows a custom impact score by country, the countries with the most deaths, and how age structure and comorbidities relate to outcomes.","The Vaccines page maps vaccination coverage and compares fully, partially and not vaccinated populations.","The Hospitalizations page compares hospital and ICU patients over time against bed capacity, along with peak ICU load."],
-    images:["00-summary","01-overview","02-populationimpact","04-vaccines","03-hospitalizations"].map(f=>[RAW+"covid19-pandemic-dashboard/main/screenshots/"+f+".png","COVID-19 dashboard page"])}
   ]}
  ],
  limits:[]
@@ -487,7 +464,6 @@ ${p.cover?`<img class="cover${p.fit?" fit":""}" src="${p.cover}" alt="${p.title}
 <div class="chips">${p.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
 <h3>${p.title}</h3>
 <p>${p.card}</p>
-<p class="hl">${p.highlight}</p>
 </div>
 </a>`).join("");
 
@@ -496,6 +472,7 @@ function table(rows){return `<div class="tbl"><table><thead><tr>${rows[0].map(h=
 function block(b,color){
   let h="";
   if(b.h)h+=`<h3 class="sub">${b.h}</h3>`;
+  if(b.link)h+=`<p style="margin:-4px 0 16px"><a class="btn sm" href="${b.link[1]}" target="_blank" rel="noopener">${b.link[0]}</a></p>`;
   if(b.p)h+=`<p>${b.p}</p>`;
   if(b.list)h+=`<ul>${b.list.map(x=>`<li>${x}</li>`).join("")}</ul>`;
   if(b.table)h+=table(b.table);
